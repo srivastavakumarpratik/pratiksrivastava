@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pratik Srivastava — Product Manager, Data & AI</title>
+<meta name="description" content="Product Manager working at the intersection of data and AI — analytics governance and conversational AI at Best Buy by day, shipping his own products with an AI dev team by night.">
+<link rel="canonical" href="https://pratiksrivastava.com/">
+<meta name="theme-color" content="#F4F6F4">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pratiksrivastava.com/">
+<meta property="og:title" content="Pratik Srivastava — Product Manager, Data & AI">
+<meta property="og:description" content="Data & AI PM at Best Buy. Ships his own products with an AI dev team. This is who I am and what I've built.">
+<meta property="og:image" content="https://pratiksrivastava.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pratik Srivastava — Product Manager, Data & AI">
+<meta name="twitter:description" content="Data & AI PM at Best Buy. Ships his own products with an AI dev team.">
+<meta name="twitter:image" content="https://pratiksrivastava.com/og.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='7' fill='%23F2A81D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6F4;--card:#FBFCFB;--ink:#16211C;--muted:#5C6A62;--line:#D8DFD9;
+  --green:#17845F;--green-bg:#DFF0E8;--amber:#B87A10;--amber-raw:#F2A81D;--amber-bg:#FBEED3;
+  --red:#B23A3A;--red-raw:#E24B4A;--red-bg:#F8E2E2;--term-green:#7CE0B3;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'Instrument Sans',system-ui,sans-serif;--disp:'Bricolage Grotesque',var(--sans);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber-raw);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+.sq{display:inline-block;width:11px;height:11px;border-radius:2.5px;flex:none}
+.sq.g{background:var(--green)}.sq.a{background:var(--amber-raw)}.sq.r{background:var(--red-raw)}
+.badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.badge.g{color:var(--green);background:var(--green-bg)}
+.badge.a{color:var(--amber);background:var(--amber-bg)}
+
+/* ===== header ===== */
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);z-index:50;border-bottom:1px solid transparent}
+.bar.scrolled{border-bottom-color:var(--line)}
+.logo{font-family:var(--mono);font-size:13.5px;font-weight:500;text-decoration:none;letter-spacing:.02em;display:inline-flex;align-items:center;gap:8px}
+.bar nav{display:flex;gap:22px}
+.bar a.nl{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+.bar a.nl:hover{color:var(--ink)}
+
+/* ===== hero ===== */
+.hero{padding:96px 0 64px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(42px,7vw,88px);line-height:1.02;letter-spacing:-.025em;margin:22px 0 20px;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero .sub{font-size:clamp(16px,1.7vw,19.5px);color:var(--muted);max-width:58ch}
+.hero .sub b{color:var(--ink);font-weight:600}
+.proof{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.proof span{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--card);display:inline-flex;align-items:center;gap:8px}
+.now{margin-top:44px;border:1px dashed var(--line);border-radius:12px;padding:12px 18px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;background:var(--card)}
+.now .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);flex:none}
+.now p{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.now p b{color:var(--ink);font-weight:500}
+
+/* ===== sections ===== */
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
+.sec-head .idx{font-family:var(--mono);font-size:13px;color:var(--muted)}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.6vw,38px);letter-spacing:-.015em}
+.sec-sub{color:var(--muted);max-width:62ch;margin-bottom:44px}
+.sec-sub a{color:var(--ink)}
+
+/* ===== career ===== */
+.job{display:grid;grid-template-columns:180px minmax(0,1fr);gap:16px 40px;padding:34px 0}
+.job+.job{border-top:1px dashed var(--line)}
+.job .when{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-top:6px;display:flex;align-items:flex-start;gap:10px}
+.job h3{font-family:var(--disp);font-size:24px;font-weight:800;letter-spacing:-.015em}
+.job .role{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:2px 0 10px}
+.job .scope{color:var(--muted);font-size:15px;margin-bottom:12px;max-width:64ch}
+.job ul{list-style:none;display:flex;flex-direction:column;gap:9px;max-width:68ch}
+.job li{font-size:15px;padding-left:20px;position:relative}
+.job li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:2.5px;background:var(--green)}
+.job li a{color:var(--ink)}
+.job .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.job .tags span{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted);background:var(--card)}
+
+/* ===== built ===== */
+.prod{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;transition:transform .35s,box-shadow .35s}
+.prod::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.prod.s-g::before{background:var(--green)}.prod.s-a::before{background:var(--amber-raw)}
+.prod:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(22,33,28,.35)}
+.prod+.prod{margin-top:20px}
+.prod-in{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px 40px;padding:30px 30px 26px}
+.prod h3{font-family:var(--disp);font-size:26px;font-weight:800;letter-spacing:-.015em}
+.prod .kind{font-family:var(--mono);font-size:11.5px;color:var(--muted);display:block;margin:2px 0 12px}
+.prod .stats{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+.prod .stats span{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.prod .stats b{color:var(--ink);font-weight:500}
+.prod .links{margin-top:16px;display:flex;flex-direction:column;gap:6px}
+.prod .links a{font-family:var(--mono);font-size:12px;color:var(--ink)}
+.prod .links span{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.prod .pitch{font-size:16px;max-width:62ch}
+.prod .wedge{font-size:14.5px;color:var(--muted);margin-top:12px;max-width:62ch}
+.prod .wedge b{color:var(--ink);font-weight:600}
+.prod .dev{font-family:var(--mono);font-size:12.5px;line-height:1.7;margin-top:14px;padding:12px 14px;border-left:3px solid var(--line);color:var(--muted);max-width:62ch;background:var(--paper);border-radius:0 8px 8px 0}
+.prod .dev b{color:var(--ink);font-weight:500}
+.prod .foot{font-family:var(--mono);font-size:12px;color:var(--amber);border-top:1px dashed var(--line);margin-top:18px;padding-top:12px;max-width:66ch}
+
+/* ===== how i build: stepper demo ===== */
+.demo{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.demo-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.steps{display:flex;gap:4px;flex-wrap:wrap}
+.stepb{font-family:var(--mono);font-size:11.5px;padding:7px 12px;border-radius:999px;border:1px solid transparent;background:none;cursor:pointer;color:var(--muted)}
+.stepb:hover{color:var(--ink)}
+.stepb.on{background:var(--amber-bg);border-color:#EBD9AE;color:var(--ink)}
+.stepnav{display:flex;gap:6px}
+.stepnav button{font-family:var(--mono);font-size:13px;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--paper);cursor:pointer;color:var(--ink)}
+.stepnav button:hover:not(:disabled){border-color:var(--ink)}
+.stepnav button:disabled{opacity:.35;cursor:default}
+.demo-stage{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;padding:28px 20px;background:repeating-linear-gradient(0deg,transparent,transparent 23px,rgba(22,33,28,.025) 24px)}
+.dscene{display:none;width:100%;justify-content:center}
+.dscene.on{display:flex}
+@media(prefers-reduced-motion:no-preference){.dscene.on{animation:sceneIn .45s ease}@keyframes sceneIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}}
+.demo-rule{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:center;padding:14px 20px;border-top:1px solid var(--line)}
+.demo-rule b{color:var(--ink);font-weight:500}
+
+/* artifact base (demo scenes) */
+.art{width:min(620px,100%);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:0 20px 48px -28px rgba(22,33,28,.28)}
+.art .cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.note{background:var(--amber-bg);border-color:#EBD9AE;transform:rotate(-1.2deg)}
+.note p.body{font-family:var(--mono);font-size:clamp(15px,2vw,20px);line-height:1.55}
+.note .scrib{font-family:var(--mono);color:var(--amber);font-size:12.5px;margin-top:16px}
+.chat .bub{border-radius:12px;padding:11px 15px;font-size:clamp(13.5px,1.5vw,15.5px);line-height:1.5;margin-top:11px;opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s;max-width:88%}
+.chat .bub.show{opacity:1;transform:none}
+.chat .bub.me{background:var(--ink);color:var(--paper);border-bottom-right-radius:4px;margin-left:auto}
+.chat .bub.cto{background:var(--paper);border:1px solid var(--line);border-bottom-left-radius:4px}
+.chat .w{font-family:var(--mono);font-size:10px;letter-spacing:.06em;opacity:.6;display:block;margin-bottom:3px;text-transform:uppercase}
+.term{background:var(--ink);border-color:var(--ink);color:var(--term-green)}
+.term .cap{color:#7E8C83}
+.term pre{font-family:var(--mono);font-size:clamp(12.5px,1.5vw,15px);line-height:1.9;white-space:pre-wrap;word-break:break-word;min-height:11.4em}
+.term .cur{display:inline-block;width:8px;height:15px;background:var(--term-green);vertical-align:-2px}
+@media(prefers-reduced-motion:no-preference){.term .cur{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}}
+.term .ok{color:#A8E6C8}
+.term .dim{color:#6E7F76}
+.ide{width:min(880px,100%);padding:0;overflow:hidden}
+.tbar{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--paper);font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.tdot{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.tbar .tname{margin-left:6px}
+.ide-body{display:grid;grid-template-columns:212px minmax(0,1fr);min-height:372px;position:relative}
+.cmds{border-right:1px solid var(--line);padding:10px 8px;display:flex;flex-direction:column;gap:3px;background:var(--card)}
+.cmds .chead{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:2px 10px 8px}
+.cmdb{text-align:left;font-family:var(--mono);font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid transparent;background:none;cursor:pointer;color:var(--ink);line-height:1.35}
+.cmdb small{display:block;font-size:10px;color:var(--muted);font-family:var(--mono)}
+.cmdb:hover{background:var(--paper)}
+.cmdb.on{background:var(--amber-bg);border-color:#EBD9AE}
+.ed{display:flex;flex-direction:column;background:var(--ink);min-width:0}
+.cdesc{font-family:var(--mono);font-size:clamp(11px,1.3vw,12.5px);line-height:1.65;color:#93A69B;padding:14px 20px 0;font-style:italic}
+.cdesc b{color:#DCE7E0;font-weight:500;font-style:normal}
+.out{flex:1;background:var(--ink);color:#B9C6BE;padding:14px 20px 18px;font-family:var(--mono);font-size:clamp(11.5px,1.4vw,13px);line-height:1.9;overflow-wrap:break-word}
+.sbar{display:flex;gap:16px;align-items:center;padding:7px 14px;background:#0F1713;font-family:var(--mono);font-size:10.5px;color:#7E8C83;flex-wrap:wrap}
+.sbar .ok2{color:#A8E6C8}
+.sbar .amb{color:#F2C879}
+.out .cl{color:var(--term-green)}
+.out .cl .who{color:#7E8C83;margin-right:6px}
+.out .ok{color:#A8E6C8}
+.out .hi{color:#F2C879}
+.out .dim{color:#6E7F76}
+.out .sq{width:9px;height:9px;vertical-align:baseline}
+.deploy{text-align:center;border-color:var(--green);position:relative}
+.deploy .url{font-family:var(--mono);font-size:clamp(19px,2.6vw,27px);font-weight:500;margin:10px 0 12px}
+.deploy .plan-line{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:16px;border-top:1px dashed var(--line);padding-top:12px}
+.burst{position:absolute;left:50%;top:40%;width:0;height:0;pointer-events:none}
+.burst i{position:absolute;width:10px;height:10px;border-radius:2.5px;background:var(--green);opacity:0}
+@media(prefers-reduced-motion:no-preference){
+  .burst.go i{animation:fly 1s ease-out forwards}
+  @keyframes fly{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(200deg)}}
+}
+
+/* ===== philosophy ===== */
+.rules{display:flex;flex-direction:column}
+.rule{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px 28px;padding:26px 0}
+.rule+.rule{border-top:1px dashed var(--line)}
+.rule .n{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:6px}
+.rule h3{font-family:var(--disp);font-size:21px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.rule p{color:var(--muted);font-size:15px;max-width:66ch}
+.rule p b{color:var(--ink);font-weight:600}
+
+/* ===== about ===== */
+.about-row{display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap}
+.about-row>div{flex:1.3;min-width:300px}
+.about-row p{color:var(--muted)}
+.about-row p+p{margin-top:14px}
+.about-row p b{color:var(--ink);font-weight:600}
+.facts{flex:1;min-width:260px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.facts span{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--card)}
+.cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13.5px;border:1px solid var(--ink);border-radius:999px;padding:11px 22px;text-decoration:none;margin-top:22px;background:var(--card)}
+.cta:hover{background:var(--ink);color:var(--paper)}
+
+footer{border-top:1px solid var(--line);padding:40px 0 52px}
+.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+.foot .links{display:flex;gap:18px}
+.foot a{font-family:var(--mono);font-size:13px;color:var(--ink)}
+.foot .small{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* reduced motion: flatten demo into a readable stack */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .demo-head{display:none}
+  .demo-stage{display:block;min-height:0;padding:0}
+  .dscene{display:flex;padding:26px 18px}
+  .dscene+.dscene{border-top:1px dashed var(--line)}
+  .chat .bub{opacity:1;transform:none}
+  .note{transform:none}
+  .demo-rule{display:none}
+  .flat-rule{display:block!important}
+}
+.flat-rule{display:none;font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center;padding:0 18px 22px}
+.flat-rule b{color:var(--ink);font-weight:500}
+
+@media(max-width:820px){
+  .bar nav{display:none}
+  .hero{padding:64px 0 48px}
+  .job{grid-template-columns:1fr;gap:8px}
+  .job .when{padding-top:0}
+  .prod-in{grid-template-columns:1fr;gap:16px;padding:24px 20px 22px}
+  .prod .stats{flex-direction:row;flex-wrap:wrap;gap:6px 16px}
+  .prod .links{flex-direction:row;flex-wrap:wrap;gap:6px 16px}
+  .ide-body{grid-template-columns:1fr}
+  .cmds{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px}
+  .cmds .chead{display:none}
+  .cmdb{flex:none}
+  .cmdb small{display:none}
+  .out{min-height:190px}
+  .demo-stage{min-height:560px;padding:20px 12px}
+  .rule{grid-template-columns:1fr;gap:4px}
+  .art{padding:20px}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="bar wrap" id="top">
+  <a class="logo" href="#top"><span class="sq a" aria-hidden="true"></span>pratik–srivastava</a>
+  <nav aria-label="Main">
+    <a class="nl" href="#career">career</a>
+    <a class="nl" href="#built">built</a>
+    <a class="nl" href="#how">how i build</a>
+    <a class="nl" href="#about">about</a>
+    <a class="nl" href="mailto:hello@pratiksrivastava.com">contact</a>
+  </nav>
+</header>
+
+<div class="hero wrap">
+  <p class="eyebrow"><span class="sq g" aria-hidden="true"></span>pratik srivastava · product manager — data &amp; ai · bengaluru</p>
+  <h1>Product manager by title. <em>Builder</em> by habit.</h1>
+  <p class="sub">By day I run data &amp; AI products at <b>Best Buy</b> — a conversational AI shopping assistant live to every customer, and the data-contract platform that keeps analytics honest across 40+ teams. By night I ship my own products, <b>directing an AI dev team by hand</b>.</p>
+  <div class="proof" aria-label="Proof points">
+    <span><span class="sq g" aria-hidden="true"></span>5+ yrs in data &amp; analytics product</span>
+    <span><span class="sq g" aria-hidden="true"></span>AI product live at Best Buy scale</span>
+    <span><span class="sq g" aria-hidden="true"></span>platform adopted by 40+ teams</span>
+    <span><span class="sq a" aria-hidden="true"></span>3 products of my own in flight</span>
+  </div>
+  <div class="now">
+    <span class="k">now</span>
+    <p>owning the <b>AI Gift Finder</b> + analytics governance at Best Buy · nights: <b>FlexCal</b> is feature-complete and hardening for beta</p>
+  </div>
+</div>
+
+<section id="career">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx mono">01</span><h2>Where I've worked</h2></div>
+    <p class="sec-sub">Three companies, one throughline: taking messy data surfaces — ad platforms, marketing models, event tracking — and turning them into products people can actually act on.</p>
+
+    <article class="job reveal">
+      <div class="when"><span class="sq g" aria-hidden="true"></span>jan 2025 — present</div>
+      <div>
+        <h3>Best Buy</h3>
+        <p class="role">product manager · data &amp; ai experiences</p>
+        <p class="scope">Two charters: conversational AI for product discovery, and the governance layer that keeps analytics data trustworthy across every customer-facing surface.</p>
+        <ul>
+          <li>Product lead for the <b>AI Gift Finder</b> — conversational gift discovery across a ~300K-SKU catalogue, built on Gemini (Vertex AI). Live to all customers since November 2025; referenced by the CEO on an earnings call and in a <a href="https://cloud.google.com/customers/bestbuy" target="_blank" rel="noopener">Google Cloud case study</a>.</li>
+          <li>Built an enterprise <b>data-contract platform</b> replacing wiki-based tracking specs with versioned, validated JSON contracts — adopted by 40+ experience teams.</li>
+          <li>Ran ~8 A/B experiments across the Gift Finder's entry point, conversation initiation, and personalization inputs.</li>
+        </ul>
+        <div class="tags"><span>conversational AI</span><span>Gemini · Vertex AI</span><span>data contracts</span><span>event instrumentation</span><span>experimentation</span></div>
+      </div>
+    </article>
+
+    <article class="job reveal">
+      <div class="when"><span class="sq g" aria-hidden="true"></span>jun 2024 — jan 2025</div>
+      <div>
+        <h3>Lifesight</h3>
+        <p class="role">product manager · marketing measurement</p>
+        <p class="scope">Unified marketing-measurement platform — attribution, marketing-mix modeling, CDP. Owned connector integrations and productizing model outputs.</p>
+        <ul>
+          <li>Built a reusable <b>connector-onboarding framework</b> — authenticate → pull → normalize → ingest — on Meltano's tap/target model, with templates per method.</li>
+          <li>Translated MMM outputs — coefficients and equations — into <b>budget sheets, forecasts, and dashboards</b> that marketing and finance stakeholders could actually use.</li>
+        </ul>
+        <div class="tags"><span>MMM · attribution</span><span>ELT · Meltano</span><span>CDP</span><span>martech</span></div>
+      </div>
+    </article>
+
+    <article class="job reveal">
+      <div class="when"><span class="sq g" aria-hidden="true"></span>jun 2021 — jun 2024</div>
+      <div>
+        <h3>Media.net</h3>
+        <p class="role">senior product analyst · ad arbitrage</p>
+        <p class="scope">Sole analyst for an ad-arbitrage unit — analytics, tooling, and marketing instrumentation across a very large content portfolio.</p>
+        <ul>
+          <li>Evolved a cross-platform reporting dashboard into an in-house <b>ad-management platform</b>: automated underperformance rules with one-click bulk actions pushed back to each ad network via API.</li>
+          <li>Owned marketing analytics across a <b>500+ website portfolio</b> and led its Universal Analytics → GA4 migration.</li>
+        </ul>
+        <div class="tags"><span>ad-platform APIs</span><span>GA4 · GTM</span><span>automation rules</span><span>reporting at scale</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="built">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx mono">02</span><h2>Things I've built</h2></div>
+    <p class="sec-sub">My own products, end to end — specced, built, reviewed, and shipped with an AI dev team I direct by hand. Statuses are honest: green is shipped and real, amber is on the bench right now.</p>
+
+    <article class="prod s-g reveal">
+      <div class="prod-in">
+        <div>
+          <h3>Just In Case</h3>
+          <span class="kind">web app · digital legacy</span>
+          <span class="badge g"><span class="sq g" aria-hidden="true"></span>shipped · live</span>
+          <div class="stats">
+            <span><b>33</b> sections · <b>11</b> groups</span>
+            <span><b>7,468</b> lines of strict TypeScript</span>
+            <span><b>zero</b> backend · zero network calls</span>
+          </div>
+          <div class="links">
+            <a href="https://just-in-case-srivastavakumarpratik-8764s-projects.vercel.app" target="_blank" rel="noopener">open the live app ↗</a>
+            <span>repo private</span>
+          </div>
+        </div>
+        <div>
+          <p class="pitch">A browser-only worksheet where you record where all your money actually is — accounts, EPF, insurance, property, nominees — so that if you weren't here, your family could find it.</p>
+          <p class="wedge"><b>The wedge:</b> the obvious alternative is a password manager's emergency access — a vault that hands over the keys. This is a <b>pointer map that is architecturally incapable of becoming a vault</b>: a guard scans every schema key, label, and help text for credential patterns and refuses to boot the app if one appears. Holding the file lets your family find everything and touch nothing.</p>
+          <p class="dev"><b>for the developers:</b> one 1,587-line schema file drives every section, editor, list view, the gaps dashboard, and the JSON/PDF round-trip — adding a section is a data change to one file. <b>connect-src 'none'</b> in the CSP, so "no network calls" is enforced by the browser, not promised in a README.</p>
+          <p class="foot">⚑ the guard even rejects help text that mentions passwords — the warning about the rule had to move where the scanner can't reach. the rule outranks the reminder about the rule.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="prod s-g reveal">
+      <div class="prod-in">
+        <div>
+          <h3>claudemeter</h3>
+          <span class="kind">chrome extension · developer tool</span>
+          <span class="badge g"><span class="sq g" aria-hidden="true"></span>shipped · daily use</span>
+          <div class="stats">
+            <span><b>117</b> tests green on CI</span>
+            <span><b>zero</b> dependencies, runtime or dev</span>
+            <span><b>MV3</b> · vanilla ES modules</span>
+          </div>
+          <div class="links">
+            <span>repo private · runs unpacked</span>
+            <span>walkthrough on request</span>
+          </div>
+        </div>
+        <div>
+          <p class="pitch">Keeps your Claude usage on screen at all times — in the toolbar, or in a small window floating above every app — so "do I push on, or wrap up?" never costs four clicks again.</p>
+          <p class="wedge"><b>The wedge:</b> every competing floating widget ships a native binary. claudemeter floats over your editor and terminal via the <b>Document Picture-in-Picture API</b> while staying an ordinary Chrome extension — and it reads the whole usage response, picking the headline by <b>shortest runway</b>, not fullest bar.</p>
+          <p class="dev"><b>for the developers:</b> polling once a minute builds a local history; a least-squares fit turns it into "~1h 30m of runway" — and the forecast <b>refuses to answer</b> across window resets or thin data rather than inventing a number. Most of the history tests assert the refusals, not the happy path.</p>
+          <p class="foot">⚑ it caught its own worst bug — a 1% reading rendering as "100% used" — because the number was on screen next to claude's own settings page, visibly disagreeing.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="prod s-a reveal">
+      <div class="prod-in">
+        <div>
+          <h3>FlexCal</h3>
+          <span class="kind">web app · scheduling</span>
+          <span class="badge a"><span class="sq a" aria-hidden="true"></span>building · pre-beta</span>
+          <div class="stats">
+            <span><b>5/5</b> milestones shipped</span>
+            <span><b>46</b> tests · <b>18</b> SQL migrations</span>
+            <span>backend live on Supabase cloud</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/srivastavakumarpratik/flexcal/tree/claude/flexcal-scheduling-brd-fk1hif" target="_blank" rel="noopener">code, open source ↗</a>
+          </div>
+        </div>
+        <div>
+          <p class="pitch">A booking link where clients propose three ranked times instead of grabbing one — and the internal meetings you'd happily move stay bookable instead of blocking your calendar.</p>
+          <p class="wedge"><b>The wedge vs Calendly / cal.com:</b> an internal 1:1 and a client call are not the same kind of busy. Hosts approve one of three ranked proposals — each annotated with what saying yes costs ("would bump 2 blocks, 6 people notified") — and <b>bumpable priority blocks</b> keep malleable meetings bookable, with approval.</p>
+          <p class="dev"><b>for the developers:</b> double-booking is impossible <b>by construction</b> — a Postgres GiST exclusion constraint over the host's time range, not application code. No service-role key anywhere: seven SECURITY DEFINER functions are the entire public API, and <code>anon</code> has zero table access — verified live.</p>
+          <p class="foot">⚑ a live sync test fetched a google holiday calendar: 524 events parsed, exactly zero imported — every one said "show me as free". the parser was right for a reason that only looks like a bug.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx mono">03</span><h2>How I build</h2></div>
+    <p class="sec-sub">The part people ask about. I don't write the code — I run the system that does: Claude as the CTO and the dev team, driven by hand, one slash command at a time. Here's one build, FlexCal, replayed in five acts. <span class="mono" style="font-size:12.5px">click through ↓</span></p>
+
+    <div class="demo" id="demo">
+      <div class="demo-head">
+        <div class="steps" role="tablist" aria-label="Build acts">
+          <button class="stepb on" data-s="0" type="button" role="tab" aria-selected="true">01 · idea</button>
+          <button class="stepb" data-s="1" type="button" role="tab" aria-selected="false">02 · spec</button>
+          <button class="stepb" data-s="2" type="button" role="tab" aria-selected="false">03 · bootstrap</button>
+          <button class="stepb" data-s="3" type="button" role="tab" aria-selected="false">04 · phases</button>
+          <button class="stepb" data-s="4" type="button" role="tab" aria-selected="false">05 · ship</button>
+        </div>
+        <div class="stepnav">
+          <button id="prev" type="button" aria-label="Previous act" disabled>←</button>
+          <button id="next" type="button" aria-label="Next act">→</button>
+        </div>
+      </div>
+
+      <div class="demo-stage">
+        <div class="dscene on" id="d0">
+          <div class="art note">
+            <p class="cap"><span class="sq r" aria-hidden="true"></span>idea inbox</p>
+            <p class="body">"cal.com alternative — what if you could book 2–3 slots and <u>I pick</u> which one sticks? also internal mtgs should bend for client calls. name: flexcal?"</p>
+            <p class="scrib">— dumped at 11:47 pm, triage later</p>
+          </div>
+        </div>
+        <p class="flat-rule"><b>rule 01</b> — every idea gets written down raw. triage comes later.</p>
+
+        <div class="dscene" id="d1">
+          <div class="art chat">
+            <p class="cap"><span class="sq a" aria-hidden="true"></span>claude project: flexcal · the CTO thread</p>
+            <div class="bub me" id="b1"><span class="w">me</span>I want to build a cal.com alternative. Fully open source. Pick one thing cal doesn't do and let's build that.</div>
+            <div class="bub cto" id="b2"><span class="w">cto</span>The gap is context-aware availability — weather APIs, live traffic buffers, even hardware triggers gating your slots…</div>
+            <div class="bub me" id="b3"><span class="w">me</span>Do you really think these are useful? What I was thinking was multiple slot bookings — you pick two or three slots, rank them, and I approve the one that works. Also internal meetings should be bumpable for a good external call.</div>
+            <div class="bub cto" id="b4"><span class="w">cto</span>That's a much better wedge — real friction, zero setup. Locking the build spec: <b>multi-slot proposals + bumpable internal blocks.</b></div>
+          </div>
+        </div>
+        <p class="flat-rule"><b>rule 02</b> — the CTO proposes, I decide. the first idea is rarely the wedge.</p>
+
+        <div class="dscene" id="d2">
+          <div class="art term">
+            <p class="cap"><span class="sq a" aria-hidden="true"></span>terminal · bootstrap</p>
+            <pre id="tt"></pre>
+          </div>
+        </div>
+        <p class="flat-rule"><b>rule 03</b> — setup is paid once. a new product costs one command.</p>
+
+        <div class="dscene" id="d3">
+          <div class="art ide">
+            <div class="tbar">
+              <span class="tdot" aria-hidden="true"></span><span class="tdot" aria-hidden="true"></span><span class="tdot" aria-hidden="true"></span>
+              <span class="tname">VS Code — flexcal · the phases · me at the wheel</span>
+            </div>
+            <div class="ide-body">
+              <div class="cmds" role="tablist" aria-label="Slash commands">
+                <p class="chead">.claude/commands — try one</p>
+                <button class="cmdb" data-c="explore" type="button">/explore<small>understand before building</small></button>
+                <button class="cmdb" data-c="create-plan" type="button">/create-plan<small>PLAN.md, phased</small></button>
+                <button class="cmdb" data-c="execute" type="button">/execute<small>build one phase</small></button>
+                <button class="cmdb" data-c="review" type="button">/review<small>full code review</small></button>
+                <button class="cmdb" data-c="peer-review" type="button">/peer-review<small>verify a 2nd model</small></button>
+                <button class="cmdb" data-c="document" type="button">/document<small>docs from real code</small></button>
+                <button class="cmdb" data-c="create-issue" type="button">/create-issue<small>capture → Linear</small></button>
+                <button class="cmdb" data-c="learning" type="button">/learning-opportunity<small>teach me this</small></button>
+              </div>
+              <div class="ed">
+                <p class="cdesc" id="cdesc"></p>
+                <div class="out" id="ideout" aria-live="polite"></div>
+                <div class="sbar"><span>⎇ phase-2-multi-slot</span><span>MCP <span class="ok2">linear ✓</span> <span class="ok2">supabase ✓</span></span><span class="amb">PLAN.md 66%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="flat-rule"><b>rule 04</b> — nothing runs on its own. I fire every command, and I read every phase before it merges.</p>
+
+        <div class="dscene" id="d4">
+          <div class="art deploy">
+            <p class="cap" style="justify-content:center"><span class="sq g" aria-hidden="true"></span>plan complete</p>
+            <p class="url">flexcal · 5/5 milestones</p>
+            <span class="badge g"><span class="sq g" aria-hidden="true"></span>feature-complete</span>
+            <p class="plan-line">PLAN.md · 100% · every phase human-reviewed · next: beta hardening</p>
+            <span class="burst" id="burst" aria-hidden="true"></span>
+          </div>
+        </div>
+        <p class="flat-rule"><b>rule 05</b> — shipped beats planned. the delta is the product.</p>
+      </div>
+
+      <p class="demo-rule" id="drule" aria-live="polite"><b>rule 01</b> — every idea gets written down raw. triage comes later.</p>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx mono">04</span><h2>How I think about building</h2></div>
+    <p class="sec-sub">Five opinions, each one paid for.</p>
+    <div class="rules">
+      <div class="rule reveal">
+        <span class="n">01</span>
+        <div>
+          <h3>Insight that isn't actionable is decoration.</h3>
+          <p>At Media.net I inherited a reporting dashboard agencies loved but couldn't act on. Instead of adding charts, I rebuilt it so a flagged ad was <b>one click from fixed</b> — rules find the underperformers, bulk actions push straight back to the ad networks. Analytics products should close the loop from insight to action, or they're wallpaper.</p>
+        </div>
+      </div>
+      <div class="rule reveal">
+        <span class="n">02</span>
+        <div>
+          <h3>Enforce standards at authoring time, not by policy.</h3>
+          <p>Wiki specs get ignored; validated contracts can't be. That's the data-contract platform's whole idea — dropdowns and generated snippets instead of documents people skip. The same instinct runs through Just In Case: <b>a rule the app enforces by refusing to boot beats a warning nobody reads.</b></p>
+        </div>
+      </div>
+      <div class="rule reveal">
+        <span class="n">03</span>
+        <div>
+          <h3>The model isn't the product. The legible artifact is.</h3>
+          <p>MMM output is coefficients and equations; the users were marketers and finance people. The PM's job with AI was never the model — it's <b>translating what the model says into something a stakeholder can act on</b>: a budget sheet, a forecast, a conversation that ends in a product page.</p>
+        </div>
+      </div>
+      <div class="rule reveal">
+        <span class="n">04</span>
+        <div>
+          <h3>Nothing ships unread.</h3>
+          <p>My build system has no autopilot. I fire every command myself, and <b>I read every phase before it merges</b> — reviews, migrations, the security model. I ship this code, so I intend to understand this code.</p>
+        </div>
+      </div>
+      <div class="rule reveal">
+        <span class="n">05</span>
+        <div>
+          <h3>Building isn't the bottleneck anymore. Distribution is.</h3>
+          <p>AI collapsed the cost of shipping — the products above took evenings, not funding rounds. The scarce skills now are <b>knowing what's worth building</b> and getting it into people's hands. That's a product problem, which is rather convenient for a product manager.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx mono">05</span><h2>About</h2></div>
+    <div class="about-row">
+      <div>
+        <p><b>I'm Pratik</b> — a product manager in Bengaluru working at the intersection of data and AI. Computer-science engineering degree, MBA in marketing &amp; business intelligence — which means I can read the code <i>and</i> argue about the roadmap, and I usually do both in the same meeting.</p>
+        <p>I care about the unglamorous layer that makes AI products trustworthy — instrumentation, contracts, governance — and about the glamorous layer that makes them useful. Evenings, I build my own products with the system you just clicked through.</p>
+        <p>If you're a founder, a hiring manager, or a PM who wants to build this way — <b>say hello.</b></p>
+        <a class="cta" href="mailto:hello@pratiksrivastava.com"><span class="sq g" aria-hidden="true"></span>hello@pratiksrivastava.com</a>
+      </div>
+      <div class="facts">
+        <span>product manager · data &amp; ai</span><span>bengaluru, IN</span><span>b.tech computer science</span><span>mba · marketing &amp; BI</span><span>conversational AI</span><span>data governance</span><span>claude · next.js · supabase</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top"><span class="sq g" aria-hidden="true"></span>pratik–srivastava</a>
+    <div class="links">
+      <a href="mailto:hello@pratiksrivastava.com">email</a>
+      <a href="https://github.com/srivastavakumarpratik">github</a>
+      <a href="https://www.linkedin.com/in/CHANGE-ME">linkedin</a>
+    </div>
+    <span class="small">© 2026 · built with the system described above</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $=id=>document.getElementById(id);
+
+  /* sticky header border */
+  const bar=document.querySelector('.bar');
+  addEventListener('scroll',()=>bar.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+  /* ---- terminal typing ---- */
+  const termLines=['$ ./new-project.sh flexcal','','✓ repo created + pushed','✓ CLAUDE.md + slash commands installed','✓ Linear project created','✓ Supabase schema wired','','ready in 41s — setup was paid once, long ago'];
+  const totalChars=termLines.reduce((s,l)=>s+l.length+1,0);
+  function renderTerm(u){
+    let budget=Math.floor(u*totalChars),out='';
+    for(const line of termLines){
+      if(budget<=0)break;
+      const take=line.slice(0,budget);
+      const cls=line.startsWith('✓')?'ok':(line.startsWith('ready')?'dim':'');
+      out+=cls?('<span class="'+cls+'">'+take+'</span>'):take;
+      budget-=line.length;
+      if(budget>0){out+='\n';budget-=1}
+    }
+    $('tt').innerHTML=out+'<span class="cur"></span>';
+  }
+
+  /* ---- slash-command explorer ---- */
+  const sqg='<span class="sq g"></span>',sqa='<span class="sq a"></span>';
+  const CMDS={
+    'explore':{desc:'<b>Understand before building.</b> Reads the codebase and the build spec, then returns every ambiguity as a question. We go back and forth until there are zero open questions — and it is forbidden from writing code.',out:'<span class="cl"><span class="who">me &gt;</span>/explore</span>\nreading repo + build spec…\n<span class="ok">✓ codebase mapped · patterns noted</span>\n<span class="hi">4 ambiguities surfaced</span> → answered from the spec\n<span class="dim">no code written. zero assumptions.</span>'},
+    'create-plan':{desc:'<b>Turn the discussion into PLAN.md.</b> Minimal phased steps with 🟩🟨🟥 status and a progress %. No extra scope, no extra complexity. Still not allowed to build.',out:'<span class="cl"><span class="who">me &gt;</span>/create-plan</span>\n<span class="ok">✓ PLAN.md written · 3 phases</span>\ncritical decisions logged with rationale\n<span class="dim">nothing beyond what we agreed. not building yet.</span>'},
+    'execute':{desc:'<b>Build exactly one phase.</b> Follows PLAN.md and existing patterns: branch, conventional commits, a PR, and a status report I can carry to the CTO thread. Stops at the phase boundary — never chains ahead on its own.',out:'<span class="cl"><span class="who">me &gt;</span>/execute</span>\nbranch <span class="hi">phase-2-multi-slot</span> · 14 files · tests green\n<span class="ok">✓ PR opened + status report attached</span>\n<span class="dim">1 deviation flagged for the CTO thread</span>'},
+    'review':{desc:'<b>Full review checklist.</b> Logging, error handling, types, security, RLS, performance, architecture — output sorted by severity with a fix per issue.',out:'<span class="cl"><span class="who">me &gt;</span>/review</span>\n12 files reviewed\n<span class="hi">⚠ HIGH — RLS missing on proposed_slots</span> → fixed\n<span class="ok">✓ merged · PLAN.md '+sqg+' '+sqg+' '+sqa+'</span>'},
+    'peer-review':{desc:'<b>Verify a second model’s review.</b> I paste findings from another model; every one is checked against the actual code. Valid → fix plan. Invalid → rejected, with reasons.',out:'<span class="cl"><span class="who">me &gt;</span>/peer-review</span>\nsecond model’s findings, verified against the code:\n<span class="ok">2 valid</span> → fix plan · <span class="dim">3 rejected, with reasons</span>\n<span class="dim">I don’t accept review at face value. neither should my tools.</span>'},
+    'document':{desc:'<b>Docs from the code, not from memory.</b> Reads the real diff, distrusts existing docs, updates README + CHANGELOG in user-facing language.',out:'<span class="cl"><span class="who">me &gt;</span>/document</span>\nreads the diff, not the old docs\n<span class="ok">✓ README + CHANGELOG updated from actual code</span>\n<span class="dim">docs that lie are worse than no docs</span>'},
+    'create-issue':{desc:'<b>Capture without derailing.</b> A mid-flow bug or idea becomes a complete Linear ticket — title, context, files, labels — in under two minutes, then straight back to the build.',out:'<span class="cl"><span class="who">me &gt;</span>/create-issue</span>\nmid-flow thought → captured, not chased\n<span class="ok">✓ FLEX-19 filed to Linear</span>: slot conflict on DST boundary\n<span class="dim">back to the build in 90 seconds</span>'},
+    'learning':{desc:'<b>Pause and teach me.</b> Explains what we just built at three depths — concept, mechanics, senior-engineer view. I ship this code, so I understand this code.',out:'<span class="cl"><span class="who">me &gt;</span>/learning-opportunity</span>\npause development. explain row-level security —\nconcept → mechanics → the senior-engineer view\n<span class="dim">I’m a PM shipping code. I intend to understand it.</span>'}
+  };
+  let curCmd=null;
+  function selectCmd(id){
+    if(curCmd===id||!CMDS[id])return;curCmd=id;
+    document.querySelectorAll('.cmdb').forEach(b=>b.classList.toggle('on',b.dataset.c===id));
+    $('cdesc').innerHTML=CMDS[id].desc;
+    $('ideout').innerHTML=CMDS[id].out.split('\n').join('<br>');
+  }
+  document.querySelectorAll('.cmdb').forEach(b=>b.addEventListener('click',()=>selectCmd(b.dataset.c)));
+
+  /* ---- confetti burst ---- */
+  let burstDone=false;
+  function makeBurst(){
+    const b=$('burst');b.innerHTML='';
+    const colors=['var(--green)','var(--amber-raw)','var(--red-raw)'];
+    for(let k=0;k<26;k++){
+      const i=document.createElement('i');
+      const ang=Math.random()*Math.PI*2,d=90+Math.random()*160;
+      i.style.setProperty('--dx',Math.cos(ang)*d+'px');
+      i.style.setProperty('--dy',Math.sin(ang)*d+'px');
+      i.style.background=colors[k%3];
+      i.style.animationDelay=(Math.random()*.15)+'s';
+      b.appendChild(i);
+    }
+    b.classList.add('go');
+  }
+
+  /* ---- reveal on scroll ---- */
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* ---- the stepper ---- */
+  const RULES=[
+    '<b>rule 01</b> — every idea gets written down raw. triage comes later.',
+    '<b>rule 02</b> — the CTO proposes, I decide. the first idea is rarely the wedge.',
+    '<b>rule 03</b> — setup is paid once. a new product costs one command.',
+    '<b>rule 04</b> — nothing runs on its own. I fire every command, and I read every phase before it merges.',
+    '<b>rule 05</b> — shipped beats planned. the delta is the product.'
+  ];
+  if(reduce){
+    renderTerm(1);
+    document.querySelectorAll('.chat .bub').forEach(e=>e.classList.add('show'));
+    selectCmd('execute');
+    return;
+  }
+  let cur=0,timers=[],raf=null;
+  function clearAnims(){timers.forEach(clearTimeout);timers=[];if(raf)cancelAnimationFrame(raf);raf=null}
+  function playScene(n){
+    clearAnims();
+    if(n===1){
+      ['b1','b2','b3','b4'].forEach(id=>$(id).classList.remove('show'));
+      [150,750,1400,2100].forEach((t,i)=>timers.push(setTimeout(()=>$('b'+(i+1)).classList.add('show'),t)));
+    }
+    if(n===2){
+      const t0=performance.now(),DUR=2200;
+      const tick=now=>{const u=Math.min(1,(now-t0)/DUR);renderTerm(u);if(u<1)raf=requestAnimationFrame(tick)};
+      renderTerm(0);raf=requestAnimationFrame(tick);
+    }
+    if(n===3&&!curCmd)selectCmd('explore');
+    if(n===4){if(!burstDone){burstDone=true;makeBurst()}}
+    else{burstDone=false;$('burst').classList.remove('go')}
+  }
+  function go(n){
+    n=Math.max(0,Math.min(4,n));
+    if(n===cur&&$('d'+n).classList.contains('on'))return;
+    cur=n;
+    for(let i=0;i<5;i++)$('d'+i).classList.toggle('on',i===n);
+    document.querySelectorAll('.stepb').forEach(b=>{
+      const on=+b.dataset.s===n;
+      b.classList.toggle('on',on);b.setAttribute('aria-selected',on);
+    });
+    $('prev').disabled=n===0;$('next').disabled=n===4;
+    $('drule').innerHTML=RULES[n];
+    playScene(n);
+  }
+  document.querySelectorAll('.stepb').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.s)));
+  $('prev').addEventListener('click',()=>go(cur-1));
+  $('next').addEventListener('click',()=>go(cur+1));
+  $('demo').addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'){go(cur+1);e.preventDefault()}
+    if(e.key==='ArrowLeft'){go(cur-1);e.preventDefault()}
+  });
+  /* start the first act's animation when the demo scrolls into view */
+  const dio=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){playScene(cur);dio.disconnect()}})},{threshold:.3});
+  dio.observe($('demo'));
+  renderTerm(0);
+})();
+</script>
+</body>
+</html>
