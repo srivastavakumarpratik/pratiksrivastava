@@ -66,9 +66,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   grid-template-areas:"id id id id id id id id st st st st" "ca ca ca ca ca ca ca ca ca ca ca ca" "pv pv pv pv pv pv pv no no no no no"}
 .tile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;min-height:0;position:relative;overflow:hidden}
 .tlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:7px;margin-bottom:10px}
-.t-id{grid-area:id;display:flex;flex-direction:row;align-items:center;gap:22px;padding:22px 28px}
-.tid-txt{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
-.tid-art{width:clamp(140px,13vw,190px);flex:none}
+.t-id{grid-area:id;display:flex;flex-direction:column;justify-content:center;padding:22px 28px}
 .t-id .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;display:inline-flex;align-items:center;gap:9px}
 .t-id h1{font-family:var(--disp);font-weight:800;font-size:clamp(28px,3.3vw,46px);line-height:1.04;letter-spacing:-.025em;margin:10px 0 10px}
 .t-id h1 em{font-style:normal;color:var(--green)}
@@ -106,26 +104,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .t-no p b{color:var(--ink);font-weight:500}
 .t-no .cue{margin-top:auto;font-family:var(--mono);font-size:11px;color:var(--green)}
 @media(prefers-reduced-motion:no-preference){.t-no .cue i{display:inline-block;animation:bob 1.8s ease-in-out infinite;font-style:normal}@keyframes bob{50%{transform:translateY(3px)}}}
-
-
-/* ===== avatar ===== */
-.avatar{display:block;width:100%;height:auto}
-.avatar .dp{stroke-dasharray:1;stroke-dashoffset:0}
-.avatar .fp{opacity:1}
-@media(prefers-reduced-motion:no-preference){
-  .avatar .dp{stroke-dashoffset:1;animation:adraw .65s ease-out forwards}
-  .avatar .fp{opacity:0;animation:afade .55s ease-out forwards}
-  .avatar .d1{animation-delay:.08s}.avatar .d2{animation-delay:.3s}.avatar .d3{animation-delay:.52s}.avatar .d4{animation-delay:.75s}
-  .avatar .f1{animation-delay:.15s}.avatar .f2{animation-delay:.35s}.avatar .f3{animation-delay:.58s}.avatar .f4{animation-delay:.95s}
-  .avatar .eyes{animation:ablink 4.6s 2.2s infinite;transform-origin:110px 101px}
-  @keyframes adraw{to{stroke-dashoffset:0}}
-  @keyframes afade{to{opacity:1}}
-  @keyframes ablink{0%,93.5%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
-}
-.avatar .headg{transform-origin:110px 178px;transition:transform .45s ease}
-.avatar .brow{transition:transform .3s ease}
-.avatar:hover .headg{transform:rotate(-2.2deg)}
-.avatar:hover .brow{transform:translateY(-2.5px)}
 
 /* ===== slide 2: products ===== */
 #built .slide-in{justify-content:center}
@@ -267,7 +245,6 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
   .bento{gap:11px}
   .tile{padding:14px 18px}
   .t-id{padding:16px 22px}
-  .tid-art{width:118px}
   .stat b{font-size:clamp(17px,1.7vw,22px)}
   .co .cohook{display:none}
   .t-pv .povline{font-size:clamp(15px,1.5vw,20px)}
@@ -278,8 +255,7 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
   .chrome nav{display:none}
   .slide{min-height:0;padding:70px 18px 26px}
   .bento{display:flex;flex-direction:column;gap:12px}
-  .t-id{padding:22px;flex-direction:column;align-items:flex-start;gap:8px}
-  .tid-art{width:120px;order:-1}
+  .t-id{padding:22px}
   .t-st{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
   .carail{display:flex;flex-direction:column;gap:12px}
   .carail::before,.carail::after{display:none}
@@ -322,7 +298,6 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
     <div class="bento">
 
       <div class="tile t-id">
-        <div class="tid-txt">
         <p class="eyebrow"><span class="sq g" aria-hidden="true"></span>pratik srivastava · bengaluru</p>
         <h1>Product manager by title. <em>Builder</em> by habit.</h1>
         <p class="sub">By day I run data &amp; AI products at <b>Best Buy</b> — a conversational AI shopping assistant live to every customer, and the data-contract platform behind it. By night I ship my own products, <b>directing an AI dev team by hand</b>.</p>
@@ -330,35 +305,6 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
           <a href="mailto:hello@pratiksrivastava.com">email</a>
           <a href="https://github.com/srivastavakumarpratik" target="_blank" rel="noopener">github</a>
           <a href="https://www.linkedin.com/in/CHANGE-ME" target="_blank" rel="noopener">linkedin</a>
-        </div>
-        </div>
-        <div class="tid-art">
-<svg class="avatar" viewBox="0 0 220 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hand-drawn portrait of Pratik — smiling, full beard, blazer, amber pin on the lapel">
-  <g class="headg">
-    <path class="dp d1" pathLength="1" d="M74 98 Q64 94 66 104 Q68 114 77 116" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" fill="var(--card)"/>
-    <path class="dp d1" pathLength="1" d="M146 98 Q156 94 154 104 Q152 114 143 116" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" fill="var(--card)"/>
-    <path class="dp d1" pathLength="1" d="M77 80 Q75 92 76 100 M143 80 Q145 92 144 100" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
-    <path class="fp f1" d="M74 94 Q66 64 84 44 Q98 28 114 29 Q134 28 146 44 Q154 58 150 80 L148 94 Q146 72 138 64 Q128 56 110 57 Q92 58 84 66 Q77 74 76 94 Z" fill="var(--ink)"/>
-    <path class="fp f2" d="M75 96 Q73 122 78 142 Q84 160 94 170 Q102 177 110 177 Q118 177 126 170 Q136 160 142 142 Q147 122 145 96 Q143 102 138 108 Q135 113 134 118 Q128 124 120 126 Q115 127 110 127 Q105 127 100 126 Q92 124 86 118 Q85 113 82 108 Q77 102 75 96 Z" fill="var(--ink)"/>
-    <path class="fp f2" d="M95 137 Q110 149 125 137 Q121 153 110 154 Q99 153 95 137 Z" fill="var(--card)"/>
-    <path class="dp d2 brow" pathLength="1" d="M84 90 Q92 85 101 88" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/>
-    <path class="dp d2 brow" pathLength="1" d="M119 88 Q128 85 136 90" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/>
-    <g class="eyes">
-      <ellipse class="fp f2" cx="93" cy="101" rx="3.4" ry="3.8" fill="var(--ink)"/>
-      <ellipse class="fp f2" cx="127" cy="101" rx="3.4" ry="3.8" fill="var(--ink)"/>
-    </g>
-    <path class="dp d2" pathLength="1" d="M110 102 Q108 112 105 118 Q109 122 114 120" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <path class="dp d3" pathLength="1" d="M97 174 L97 184 M123 174 L123 184" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
-  <path class="dp d3" pathLength="1" d="M92 182 L84 194 L102 206 L110 200 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-  <path class="dp d3" pathLength="1" d="M128 182 L136 194 L118 206 L110 200 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-  <path class="fp f3" d="M100 204 L110 198 L120 204 Q116 232 110 246 Q104 232 100 204 Z" fill="var(--card)"/>
-  <path class="fp f3" d="M88 188 Q52 196 38 212 Q28 226 26 260 L104 260 Q94 232 88 188 Z" fill="var(--ink)"/>
-  <path class="fp f3" d="M132 188 Q168 196 182 212 Q192 226 194 260 L116 260 Q126 232 132 188 Z" fill="var(--ink)"/>
-  <path class="dp d4" pathLength="1" d="M89 190 Q97 224 104 242" stroke="var(--card)" stroke-width="2.5" fill="none"/>
-  <path class="dp d4" pathLength="1" d="M131 190 Q123 224 116 242" stroke="var(--card)" stroke-width="2.5" fill="none"/>
-  <rect class="fp f4" x="66" y="212" width="9" height="9" rx="2.5" fill="var(--amber-raw)" transform="rotate(-8 70 216)"/>
-</svg>
         </div>
       </div>
 
