@@ -114,6 +114,27 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .tease{margin-top:14px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--muted)}
 .tease a{color:var(--ink)}
 
+/* ===== slide: experiment log ===== */
+#experiments .slide-in{justify-content:center}
+#experiments .shead{margin-bottom:18px}
+.badge.r{color:var(--red);background:var(--red-bg)}
+.badge.m{color:var(--muted);background:var(--paper);border:1px solid var(--line)}
+.xlog{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.xrow{display:grid;grid-template-columns:70px minmax(0,1fr) 96px 84px 138px 20px;gap:14px;align-items:center;width:100%;padding:17px 22px;background:none;border:0;border-top:1px solid var(--line);cursor:pointer;text-align:left;font-family:var(--sans)}
+.xlog .xrow:first-child{border-top:0}
+.xrow:hover{background:var(--paper)}
+.xrow .xid{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.xrow .xtitle{font-family:var(--disp);font-size:clamp(15px,1.4vw,18.5px);font-weight:700;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xrow .xarea,.xrow .xdate{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.xrow .xmore{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.xrow:hover .xmore{color:var(--green)}
+.xfoot{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:center;margin-top:14px}
+.xfoot b{color:var(--ink);font-weight:500}
+dialog .xblk{margin-top:14px}
+dialog .xblk .xl{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;display:flex;align-items:center;gap:6px}
+dialog .xblk p{font-size:14px;color:var(--muted)}
+dialog .xblk p b{color:var(--ink);font-weight:600}
+
 /* ===== slide 3: story ===== */
 .story{flex:1;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:0}
 .story-top{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
@@ -242,6 +263,9 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
   .co .costep{padding-top:8px}
   .strip{flex-direction:column;align-items:flex-start}
   .povq{text-align:left}
+  .xrow{grid-template-columns:52px minmax(0,1fr) auto;padding:14px 16px}
+  .xrow .xarea,.xrow .xdate,.xrow .xmore{display:none}
+  .xrow .xtitle{white-space:normal}
   .pdeck{display:flex;flex-direction:column}
   .pp .sig{margin-top:6px}
   .story-stage{min-height:480px;padding:16px 10px}
@@ -262,6 +286,7 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
   <nav aria-label="Main">
     <a class="nl" href="#me">me</a>
     <a class="nl" href="#built">built</a>
+    <a class="nl" href="#experiments">experiments</a>
     <a class="nl" href="#how">how</a>
     <a class="nl" href="mailto:hello@pratiksrivastava.com">contact</a>
   </nav>
@@ -270,7 +295,8 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
 <nav class="dots" aria-label="Slides">
   <button class="dot on" data-t="me" type="button" aria-label="Slide 1: me"></button>
   <button class="dot" data-t="built" type="button" aria-label="Slide 2: built"></button>
-  <button class="dot" data-t="how" type="button" aria-label="Slide 3: how I build"></button>
+  <button class="dot" data-t="experiments" type="button" aria-label="Slide 3: experiment log"></button>
+  <button class="dot" data-t="how" type="button" aria-label="Slide 4: how I build"></button>
 </nav>
 
 <!-- ============ SLIDE 1 : ME ============ -->
@@ -369,10 +395,44 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
   </div>
 </section>
 
+<!-- ============ SLIDE 3 : EXPERIMENTS ============ -->
+<section class="slide" id="experiments" aria-label="Experiment log">
+  <div class="slide-in">
+    <div class="shead"><span class="idx">03</span><h2>The experiment log</h2><span class="hint">hypothesis → method → verdict · click an entry</span></div>
+    <div class="xlog">
+      <button class="xrow" type="button" data-dlg="dlg-exp-3">
+        <span class="xid">EXP-03</span>
+        <span class="xtitle">[FROM PROMPT C] Running experiment title</span>
+        <span class="xarea">building</span>
+        <span class="xdate">2026</span>
+        <span class="badge a"><span class="sq a" aria-hidden="true"></span>running</span>
+        <span class="xmore">+</span>
+      </button>
+      <button class="xrow" type="button" data-dlg="dlg-exp-2">
+        <span class="xid">EXP-02</span>
+        <span class="xtitle">[FROM PROMPT C] Validated experiment title</span>
+        <span class="xarea">data</span>
+        <span class="xdate">2026</span>
+        <span class="badge g"><span class="sq g" aria-hidden="true"></span>validated</span>
+        <span class="xmore">+</span>
+      </button>
+      <button class="xrow" type="button" data-dlg="dlg-exp-1">
+        <span class="xid">EXP-01</span>
+        <span class="xtitle">[FROM PROMPT C] Refuted experiment title</span>
+        <span class="xarea">product</span>
+        <span class="xdate">2025</span>
+        <span class="badge r"><span class="sq r" aria-hidden="true"></span>refuted</span>
+        <span class="xmore">+</span>
+      </button>
+    </div>
+    <p class="xfoot">every entry ran for real · the log publishes failures on purpose — <b>refuted is a result</b></p>
+  </div>
+</section>
+
 <!-- ============ SLIDE 3 : HOW ============ -->
 <section class="slide" id="how" aria-label="How Pratik builds">
   <div class="slide-in">
-    <div class="shead"><span class="idx">03</span><h2>How I build</h2><span class="hint">I don't write the code — I run the system that does. one real build, five acts.</span></div>
+    <div class="shead"><span class="idx">04</span><h2>How I build</h2><span class="hint">I don't write the code — I run the system that does. one real build, five acts.</span></div>
 
     <div class="story" id="story">
       <div class="story-top">
@@ -520,6 +580,42 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
   </div>
 </dialog>
 
+<dialog id="dlg-exp-3" aria-labelledby="dlg-exp-3-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-exp-3-t">[FROM PROMPT C] Running experiment</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">EXP-03 · [FROM PROMPT C] area · date · status</p>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>hypothesis</p><p>[FROM PROMPT C] The bet: "I believed that…"</p></div>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>method</p><p>[FROM PROMPT C] What was actually done — tools, steps, duration.</p></div>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>result</p><p>[FROM PROMPT C] What happened, with honest numbers.</p></div>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>verdict — running</p><p><b>[FROM PROMPT C] the one-line takeaway.</b></p></div>
+    <div class="dlinks"><span>no writeup yet</span></div>
+  </div>
+</dialog>
+
+<dialog id="dlg-exp-2" aria-labelledby="dlg-exp-2-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-exp-2-t">[FROM PROMPT C] Validated experiment</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">EXP-02 · [FROM PROMPT C] area · date · status</p>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>hypothesis</p><p>[FROM PROMPT C] The bet: "I believed that…"</p></div>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>method</p><p>[FROM PROMPT C] What was actually done — tools, steps, duration.</p></div>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>result</p><p>[FROM PROMPT C] What happened, with honest numbers.</p></div>
+    <div class="xblk"><p class="xl"><span class="sq g" aria-hidden="true"></span>verdict — validated</p><p><b>[FROM PROMPT C] the one-line takeaway.</b></p></div>
+    <div class="dlinks"><a href="experiments/_template/">read the lab notes →</a></div>
+  </div>
+</dialog>
+
+<dialog id="dlg-exp-1" aria-labelledby="dlg-exp-1-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-exp-1-t">[FROM PROMPT C] Refuted experiment</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">EXP-01 · [FROM PROMPT C] area · date · status</p>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>hypothesis</p><p>[FROM PROMPT C] The bet: "I believed that…"</p></div>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>method</p><p>[FROM PROMPT C] What was actually done — tools, steps, duration.</p></div>
+    <div class="xblk"><p class="xl"><span class="sq a" aria-hidden="true"></span>result</p><p>[FROM PROMPT C] What happened, with honest numbers.</p></div>
+    <div class="xblk"><p class="xl"><span class="sq r" aria-hidden="true"></span>verdict — refuted</p><p><b>[FROM PROMPT C] the one-line takeaway.</b></p></div>
+    <div class="dlinks"><span>no writeup yet</span></div>
+  </div>
+</dialog>
+
 <dialog id="dlg-jic" aria-labelledby="dlg-jic-t">
   <div class="dlg-in">
     <div class="dlg-head"><h3 id="dlg-jic-t">Just In Case</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
@@ -579,7 +675,7 @@ dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);pa
   });
 
   /* ---- slide dots ---- */
-  const slides=['me','built','how'];
+  const slides=['me','built','experiments','how'];
   const dots=[...document.querySelectorAll('.dot')];
   dots.forEach(b=>b.addEventListener('click',()=>$(b.dataset.t).scrollIntoView({behavior:reduce?'auto':'smooth'})));
   const sio=new IntersectionObserver(es=>{
