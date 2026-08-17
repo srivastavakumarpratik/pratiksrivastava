@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pratik Srivastava — Product Manager, Data & AI</title>
+<meta name="description" content="Product Manager working at the intersection of data and AI — analytics governance and conversational AI at Best Buy by day, shipping his own products with an AI dev team by night.">
+<link rel="canonical" href="https://pratiksrivastava.com/">
+<meta name="theme-color" content="#F4F6F4">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pratiksrivastava.com/">
+<meta property="og:title" content="Pratik Srivastava — Product Manager, Data & AI">
+<meta property="og:description" content="Data & AI PM at Best Buy. Ships his own products with an AI dev team. Three folds: who I am, what I've built, how I build.">
+<meta property="og:image" content="https://pratiksrivastava.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pratik Srivastava — Product Manager, Data & AI">
+<meta name="twitter:description" content="Data & AI PM at Best Buy. Ships his own products with an AI dev team.">
+<meta name="twitter:image" content="https://pratiksrivastava.com/og.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='7' fill='%23F2A81D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6F4;--card:#FBFCFB;--ink:#16211C;--muted:#5C6A62;--line:#D8DFD9;
+  --green:#17845F;--green-bg:#DFF0E8;--amber:#B87A10;--amber-raw:#F2A81D;--amber-bg:#FBEED3;
+  --red:#B23A3A;--red-raw:#E24B4A;--red-bg:#F8E2E2;--term-green:#7CE0B3;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'Instrument Sans',system-ui,sans-serif;--disp:'Bricolage Grotesque',var(--sans);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y mandatory}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--amber-raw);outline-offset:3px;border-radius:2px}
+.mono{font-family:var(--mono)}
+.sq{display:inline-block;width:11px;height:11px;border-radius:2.5px;flex:none}
+.sq.g{background:var(--green)}.sq.a{background:var(--amber-raw)}.sq.r{background:var(--red-raw)}
+.badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.badge.g{color:var(--green);background:var(--green-bg)}
+.badge.a{color:var(--amber);background:var(--amber-bg)}
+
+/* ===== fixed chrome ===== */
+.chrome{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;height:54px;padding:0 26px;z-index:40;pointer-events:none}
+.chrome>*{pointer-events:auto}
+.logo{font-family:var(--mono);font-size:13.5px;font-weight:500;text-decoration:none;letter-spacing:.02em;display:inline-flex;align-items:center;gap:8px}
+.chrome nav{display:flex;gap:20px}
+.chrome a.nl{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+.chrome a.nl:hover{color:var(--ink)}
+.dots{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:40}
+.dot{width:10px;height:10px;border-radius:3px;background:var(--line);border:0;cursor:pointer;padding:0;transition:background .3s,transform .3s}
+.dot.on{background:var(--green);transform:scale(1.25)}
+.dot:hover{background:var(--amber-raw)}
+
+/* ===== slides ===== */
+.slide{min-height:100dvh;scroll-snap-align:start;display:flex;flex-direction:column;padding:58px 26px 16px}
+.slide-in{width:100%;max-width:1240px;margin:0 auto;flex:1;display:flex;flex-direction:column;min-height:0}
+.shead{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.shead .idx{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.shead h2{font-family:var(--disp);font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em}
+.shead .hint{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:auto}
+
+/* ===== slide 1: editorial hero ===== */
+.hero3{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.hero3 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;display:inline-flex;align-items:center;gap:9px}
+.hero3 h1{font-family:var(--disp);font-weight:800;font-size:clamp(38px,4.8vw,66px);line-height:1.03;letter-spacing:-.025em;margin:16px 0 14px;max-width:16ch}
+.hero3 h1 em{font-style:normal;color:var(--green)}
+.hero3 .sub{font-size:clamp(15px,1.35vw,18px);color:var(--muted);max-width:60ch}
+.hero3 .sub b{color:var(--ink);font-weight:600}
+.proof{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.proof span{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:999px;padding:7px 13px;background:var(--card);display:inline-flex;align-items:center;gap:8px}
+.ca3{margin-top:10px}
+.tlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:7px;margin-bottom:12px}
+.carail{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;position:relative}
+.carail::before{content:"";position:absolute;top:50%;left:8px;right:8px;height:2px;background:var(--line);z-index:0}
+.carail::after{content:"→";position:absolute;top:50%;right:-2px;transform:translateY(-58%);color:var(--muted);font-size:15px;z-index:0}
+.co{position:relative;z-index:1;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:13px 16px;text-align:left;cursor:pointer;font-family:var(--sans);display:flex;flex-direction:column;gap:3px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.co:hover{transform:translateY(-3px);border-color:var(--green);box-shadow:0 10px 24px -16px rgba(22,33,28,.4)}
+.co .coname{font-family:var(--disp);font-size:clamp(16px,1.5vw,20px);font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.co .coname i{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400;transition:color .25s}
+.co:hover .coname i{color:var(--green)}
+.co .corole{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.co .cohook{font-size:12.6px;color:var(--muted);line-height:1.45;margin-top:4px}
+.co .cohook b{color:var(--ink);font-weight:600}
+.co .costep{font-family:var(--mono);font-size:10px;color:var(--green);margin-top:8px}
+.strip{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap;border-top:1px dashed var(--line);margin-top:24px;padding-top:14px}
+.strip .nowl{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.strip .nowl b{color:var(--ink);font-weight:500}
+.strip .nowl .k{color:var(--green);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px;margin-right:8px}
+.povq{font-family:var(--mono);font-size:12px;color:var(--muted);background:none;border:0;cursor:pointer;text-align:right;padding:0}
+.povq b{color:var(--ink);font-weight:500;transition:opacity .4s}
+.povq:hover b{color:var(--green)}
+
+/* ===== slide 2: products ===== */
+#built .slide-in{justify-content:center}
+.pdeck{flex:0 1 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;min-height:0}
+#built .shead{margin-bottom:18px}
+.pp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;min-height:0}
+.pp::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.pp.s-g::before{background:var(--green)}.pp.s-a::before{background:var(--amber-raw)}
+.pp:hover{transform:translateY(-4px);box-shadow:0 16px 34px -20px rgba(22,33,28,.4)}
+.pp h3{font-family:var(--disp);font-size:clamp(22px,2vw,28px);font-weight:800;letter-spacing:-.015em}
+.pp .kind{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.pp .badge{align-self:flex-start;margin-top:2px}
+.pp .pitch{font-size:clamp(13.5px,1.15vw,15px);color:var(--muted);line-height:1.55;margin-top:6px}
+.pp .pitch b{color:var(--ink);font-weight:600}
+.pp .sig{font-family:var(--mono);font-size:11.5px;line-height:1.7;border-left:3px solid var(--line);padding:8px 12px;background:var(--paper);border-radius:0 8px 8px 0;color:var(--muted);margin-top:8px}
+.pp .foot{font-family:var(--mono);font-size:11px;color:var(--amber);line-height:1.6;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
+.pp .sig b{color:var(--ink);font-weight:500}
+.pp .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pp .actions a,.pp .actions button{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--card);cursor:pointer;text-decoration:none;color:var(--ink)}
+.pp .actions a:hover,.pp .actions button:hover{border-color:var(--ink)}
+.pp .actions a.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pp .actions span{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:7px 0}
+.tease{margin-top:14px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tease a{color:var(--ink)}
+
+/* ===== slide 3: story ===== */
+.story{flex:1;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:0}
+.story-top{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.segs{flex:1;display:flex;gap:6px;min-width:220px}
+.seg{flex:1;height:22px;border:0;background:none;cursor:pointer;padding:8px 0;position:relative}
+.seg::before{content:"";position:absolute;left:0;right:0;top:9px;height:4px;border-radius:99px;background:var(--line)}
+.seg i{position:absolute;left:0;top:9px;height:4px;border-radius:99px;background:var(--green);width:0%}
+.seg .slab{position:absolute;top:-9px;left:0;font-family:var(--mono);font-size:9px;letter-spacing:.05em;color:var(--muted);white-space:nowrap}
+.seg.on .slab{color:var(--ink)}
+.sctl{display:flex;gap:6px}
+.sctl button{font-family:var(--mono);font-size:12px;width:32px;height:32px;border-radius:9px;border:1px solid var(--line);background:var(--paper);cursor:pointer;color:var(--ink)}
+.sctl button:hover{border-color:var(--ink)}
+.story-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:20px 16px;min-height:0;background:repeating-linear-gradient(0deg,transparent,transparent 23px,rgba(22,33,28,.025) 24px);overflow:hidden}
+.dscene{display:none;width:100%;justify-content:center}
+.dscene.on{display:flex}
+@media(prefers-reduced-motion:no-preference){.dscene.on{animation:sceneIn .45s ease}@keyframes sceneIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}}
+.narr{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center;padding:11px 18px;border-top:1px solid var(--line)}
+.narr b{color:var(--ink);font-weight:500}
+.close-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 4px 0;flex-wrap:wrap}
+.close-row .say{font-family:var(--disp);font-weight:800;font-size:clamp(16px,1.6vw,21px);letter-spacing:-.01em}
+.close-row .say a{color:var(--green)}
+.close-row .links{display:flex;gap:16px;align-items:center}
+.close-row .links a{font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.close-row .small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+/* scenes (shared with concept 1) */
+.art{width:min(560px,100%);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:0 20px 48px -28px rgba(22,33,28,.28)}
+.art .cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.note{background:var(--amber-bg);border-color:#EBD9AE;transform:rotate(-1.2deg)}
+.note p.body{font-family:var(--mono);font-size:clamp(14px,1.6vw,18px);line-height:1.55}
+.note .scrib{font-family:var(--mono);color:var(--amber);font-size:12px;margin-top:14px}
+.chat .bub{border-radius:12px;padding:10px 14px;font-size:clamp(12.5px,1.2vw,14px);line-height:1.5;margin-top:10px;opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s;max-width:88%}
+.chat .bub.show{opacity:1;transform:none}
+.chat .bub.me{background:var(--ink);color:var(--paper);border-bottom-right-radius:4px;margin-left:auto}
+.chat .bub.cto{background:var(--paper);border:1px solid var(--line);border-bottom-left-radius:4px}
+.chat .w{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;opacity:.6;display:block;margin-bottom:3px;text-transform:uppercase}
+.term{background:var(--ink);border-color:var(--ink);color:var(--term-green)}
+.term .cap{color:#7E8C83}
+.term pre{font-family:var(--mono);font-size:clamp(12px,1.3vw,14px);line-height:1.85;white-space:pre-wrap;word-break:break-word;min-height:11em}
+.term .cur{display:inline-block;width:8px;height:14px;background:var(--term-green);vertical-align:-2px}
+@media(prefers-reduced-motion:no-preference){.term .cur{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}}
+.term .ok{color:#A8E6C8}
+.term .dim{color:#6E7F76}
+.ide{width:min(820px,100%);padding:0;overflow:hidden}
+.tbar{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--paper);font-family:var(--mono);font-size:11px;color:var(--muted)}
+.tdot{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.tbar .tname{margin-left:6px}
+.ide-body{display:grid;grid-template-columns:200px minmax(0,1fr);min-height:300px;position:relative}
+.cmds{border-right:1px solid var(--line);padding:8px 6px;display:flex;flex-direction:column;gap:2px;background:var(--card);overflow-y:auto}
+.cmds .chead{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:2px 10px 6px}
+.cmdb{text-align:left;font-family:var(--mono);font-size:11.5px;padding:5px 10px;border-radius:8px;border:1px solid transparent;background:none;cursor:pointer;color:var(--ink);line-height:1.3}
+.cmdb small{display:block;font-size:9.5px;color:var(--muted);font-family:var(--mono)}
+.cmdb:hover{background:var(--paper)}
+.cmdb.on{background:var(--amber-bg);border-color:#EBD9AE}
+.ed{display:flex;flex-direction:column;background:var(--ink);min-width:0}
+.cdesc{font-family:var(--mono);font-size:clamp(10.5px,1.1vw,12px);line-height:1.6;color:#93A69B;padding:12px 18px 0;font-style:italic}
+.cdesc b{color:#DCE7E0;font-weight:500;font-style:normal}
+.out{flex:1;background:var(--ink);color:#B9C6BE;padding:12px 18px 14px;font-family:var(--mono);font-size:clamp(11px,1.15vw,12.5px);line-height:1.85;overflow-wrap:break-word}
+.sbar{display:flex;gap:14px;align-items:center;padding:6px 12px;background:#0F1713;font-family:var(--mono);font-size:10px;color:#7E8C83;flex-wrap:wrap}
+.sbar .ok2{color:#A8E6C8}
+.sbar .amb{color:#F2C879}
+.out .cl{color:var(--term-green)}
+.out .cl .who{color:#7E8C83;margin-right:6px}
+.out .ok{color:#A8E6C8}
+.out .hi{color:#F2C879}
+.out .dim{color:#6E7F76}
+.out .sq{width:8px;height:8px;vertical-align:baseline}
+.deploy{text-align:center;border-color:var(--green);position:relative}
+.deploy .url{font-family:var(--mono);font-size:clamp(18px,2.2vw,24px);font-weight:500;margin:8px 0 10px}
+.deploy .plan-line{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:14px;border-top:1px dashed var(--line);padding-top:11px}
+.burst{position:absolute;left:50%;top:40%;width:0;height:0;pointer-events:none}
+.burst i{position:absolute;width:10px;height:10px;border-radius:2.5px;background:var(--green);opacity:0}
+@media(prefers-reduced-motion:no-preference){
+  .burst.go i{animation:fly 1s ease-out forwards}
+  @keyframes fly{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(200deg)}}
+}
+
+/* ===== dialogs ===== */
+dialog{width:min(680px,92vw);max-height:84dvh;border:1px solid var(--line);border-radius:18px;padding:0;background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(22,33,28,.45);backdrop-filter:blur(3px)}
+.dlg-in{padding:28px 30px;overflow-y:auto;max-height:84dvh}
+.dlg-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:6px}
+.dlg-head h3{font-family:var(--disp);font-size:26px;font-weight:800;letter-spacing:-.015em}
+.dlg-close{font-family:var(--mono);font-size:14px;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--paper);cursor:pointer;flex:none;color:var(--ink)}
+.dlg-close:hover{border-color:var(--ink)}
+dialog .role{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:12px}
+dialog .scope{color:var(--muted);font-size:14.5px;margin-bottom:14px}
+dialog ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+dialog li{font-size:14.5px;padding-left:20px;position:relative}
+dialog li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:2.5px;background:var(--green)}
+dialog li a{color:var(--ink)}
+dialog .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+dialog .tags span{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted);background:var(--paper)}
+dialog .wedge{font-size:14.5px;color:var(--muted);margin:10px 0 0}
+dialog .wedge b{color:var(--ink);font-weight:600}
+dialog .dev{font-family:var(--mono);font-size:12px;line-height:1.7;margin-top:14px;padding:12px 14px;border-left:3px solid var(--line);color:var(--muted);background:var(--paper);border-radius:0 8px 8px 0}
+dialog .dev b{color:var(--ink);font-weight:500}
+dialog .foot{font-family:var(--mono);font-size:11.5px;color:var(--amber);border-top:1px dashed var(--line);margin-top:16px;padding-top:12px}
+dialog .dlinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+dialog .dlinks a{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;text-decoration:none}
+dialog .dlinks a:hover{border-color:var(--ink)}
+dialog .dlinks span{font-family:var(--mono);font-size:12px;color:var(--muted);padding:7px 0}
+.povfull{display:flex;flex-direction:column;gap:18px;margin-top:8px}
+.povfull .pv{display:grid;grid-template-columns:44px 1fr;gap:10px}
+.povfull .n{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:4px}
+.povfull h4{font-family:var(--disp);font-size:17.5px;font-weight:800;letter-spacing:-.01em;margin-bottom:3px}
+.povfull p{color:var(--muted);font-size:13.5px}
+.povfull p b{color:var(--ink);font-weight:600}
+
+@media(min-width:901px) and (max-height:800px){
+  .slide{padding-top:50px}
+  .hero3 h1{font-size:clamp(30px,3.8vw,48px);margin:12px 0 10px}
+  .hero3 .sub{font-size:clamp(13.5px,1.2vw,15.5px)}
+  .proof{margin-top:16px}
+  .co .cohook{display:none}
+  .carail{gap:22px}
+  .strip{margin-top:16px}
+}
+@media(max-width:900px){
+  html{scroll-snap-type:none}
+  .dots{display:none}
+  .chrome nav{display:none}
+  .slide{min-height:0;padding:70px 18px 26px}
+  .carail{display:flex;flex-direction:column;gap:12px}
+  .carail::before,.carail::after{display:none}
+  .co .costep{padding-top:8px}
+  .strip{flex-direction:column;align-items:flex-start}
+  .povq{text-align:left}
+  .pdeck{display:flex;flex-direction:column}
+  .pp .sig{margin-top:6px}
+  .story-stage{min-height:480px;padding:16px 10px}
+  .ide-body{grid-template-columns:1fr}
+  .cmds{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:6px}
+  .cmds .chead{display:none}
+  .cmdb{flex:none}
+  .cmdb small{display:none}
+  .out{min-height:170px}
+  .seg .slab{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="chrome">
+  <a class="logo" href="#me"><span class="sq a" aria-hidden="true"></span>pratik–srivastava</a>
+  <nav aria-label="Main">
+    <a class="nl" href="#me">me</a>
+    <a class="nl" href="#built">built</a>
+    <a class="nl" href="#how">how</a>
+    <a class="nl" href="mailto:hello@pratiksrivastava.com">contact</a>
+  </nav>
+</header>
+
+<nav class="dots" aria-label="Slides">
+  <button class="dot on" data-t="me" type="button" aria-label="Slide 1: me"></button>
+  <button class="dot" data-t="built" type="button" aria-label="Slide 2: built"></button>
+  <button class="dot" data-t="how" type="button" aria-label="Slide 3: how I build"></button>
+</nav>
+
+<!-- ============ SLIDE 1 : ME ============ -->
+<section class="slide" id="me" aria-label="About Pratik">
+  <div class="slide-in">
+    <div class="hero3">
+      <p class="eyebrow"><span class="sq g" aria-hidden="true"></span>pratik srivastava · product manager — data &amp; ai · bengaluru</p>
+      <h1>Product manager by title. <em>Builder</em> by habit.</h1>
+      <p class="sub">By day I run data &amp; AI products at <b>Best Buy</b> — the AI Gift Finder, live to every customer, and the data-contract platform that keeps analytics honest across 40+ teams. By night I ship my own products, <b>directing an AI dev team by hand</b>.</p>
+      <div class="proof" aria-label="Proof points">
+        <span><span class="sq g" aria-hidden="true"></span>AI product live to every Best Buy customer</span>
+        <span><span class="sq g" aria-hidden="true"></span>featured on an earnings call + Google Cloud case study</span>
+        <span><span class="sq g" aria-hidden="true"></span>40+ teams build on my data contracts</span>
+        <span><span class="sq a" aria-hidden="true"></span>2 products of my own shipped · 1 in beta</span>
+      </div>
+    </div>
+
+    <div class="ca3">
+      <p class="tlabel"><span class="sq g" aria-hidden="true"></span>where I've worked · one throughline: from insight to action · click a company</p>
+      <div class="carail">
+        <button class="co" type="button" data-dlg="dlg-mn">
+          <span class="coname">Media.net <i>+</i></span>
+          <span class="corole">senior product analyst · 2021–24</span>
+          <span class="cohook">Turned a reporting dashboard nobody could act on into an <b>ad-management platform</b> with one-click fixes.</span>
+          <span class="costep">act I · found the insight-to-action gap</span>
+        </button>
+        <button class="co" type="button" data-dlg="dlg-ls">
+          <span class="coname">Lifesight <i>+</i></span>
+          <span class="corole">product manager · 2024–25</span>
+          <span class="cohook">Made marketing-mix models legible — <b>coefficients in, budget sheets out</b> — for people who don't read math.</span>
+          <span class="costep">act II · made models actionable</span>
+        </button>
+        <button class="co" type="button" data-dlg="dlg-bby">
+          <span class="coname">Best Buy <i>+</i></span>
+          <span class="corole">product manager · data &amp; ai · 2025–</span>
+          <span class="cohook">Product lead for the <b>AI Gift Finder</b> — live to every customer, featured on the CEO’s earnings call.</span>
+          <span class="costep">act III · closing the loop at scale</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="strip">
+      <p class="nowl"><span class="k">now</span>day: owning the <b>AI Gift Finder</b> + analytics governance at Best Buy · night: <b>FlexCal</b> hardening for beta</p>
+      <button class="povq" type="button" data-dlg="dlg-pov"><b id="povq">“Insight that isn’t actionable is decoration.”</b> · my five opinions +</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2 : BUILT ============ -->
+<section class="slide" id="built" aria-label="Products Pratik has built">
+  <div class="slide-in">
+    <div class="shead"><span class="idx">02</span><h2>Things I've built</h2><span class="hint">statuses are honest · click a card for the full story</span></div>
+    <div class="pdeck">
+
+      <article class="pp s-g" data-dlg="dlg-jic" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Just In Case — full story">
+        <h3>Just In Case</h3>
+        <span class="kind">web app · digital legacy</span>
+        <span class="badge g"><span class="sq g" aria-hidden="true"></span>shipped · live</span>
+        <p class="pitch">A browser-only worksheet where you record where all your money actually is — accounts, insurance, nominees — so that if you weren't here, <b>your family could find it</b>.</p>
+        <p class="sig"><b>architecturally incapable</b> of storing a password — a guard scans the schema and refuses to boot · 7,468 lines strict TS · zero backend</p>
+        <p class="foot">⚑ its guard even rejects help text that mentions passwords — the rule outranks the reminder about the rule</p>
+        <div class="actions">
+          <a class="primary" href="https://just-in-case-srivastavakumarpratik-8764s-projects.vercel.app" target="_blank" rel="noopener">open the live app ↗</a>
+          <button type="button" data-dlg="dlg-jic">full story +</button>
+        </div>
+      </article>
+
+      <article class="pp s-g" data-dlg="dlg-cm" tabindex="0" role="button" aria-haspopup="dialog" aria-label="claudemeter — full story">
+        <h3>claudemeter</h3>
+        <span class="kind">chrome extension · developer tool</span>
+        <span class="badge g"><span class="sq g" aria-hidden="true"></span>shipped · daily use</span>
+        <p class="pitch">Keeps your Claude usage on screen at all times — toolbar or a window floating above every app — so <b>"do I push on, or wrap up?" never costs four clicks</b> again.</p>
+        <p class="sig">floats over your editor via <b>Document Picture-in-Picture</b> — no native binary · 117 tests · zero dependencies</p>
+        <p class="foot">⚑ caught its own worst bug — 1% rendering as "100% used" — because the number was always on screen</p>
+        <div class="actions">
+          <button type="button" data-dlg="dlg-cm">full story +</button>
+          <span>repo private · walkthrough on request</span>
+        </div>
+      </article>
+
+      <article class="pp s-a" data-dlg="dlg-fc" tabindex="0" role="button" aria-haspopup="dialog" aria-label="FlexCal — full story">
+        <h3>FlexCal</h3>
+        <span class="kind">web app · scheduling</span>
+        <span class="badge a"><span class="sq a" aria-hidden="true"></span>building · pre-beta</span>
+        <p class="pitch">A booking link where clients propose <b>three ranked times</b> instead of grabbing one — and the internal meetings you'd happily move stay bookable instead of blocking your calendar.</p>
+        <p class="sig">double-booking impossible <b>by construction</b> — a Postgres GiST exclusion constraint · 5/5 milestones · 46 tests</p>
+        <p class="foot">⚑ a live test parsed 524 holiday-calendar events and imported exactly zero — correctly</p>
+        <div class="actions">
+          <a href="https://github.com/srivastavakumarpratik/flexcal/tree/claude/flexcal-scheduling-brd-fk1hif" target="_blank" rel="noopener">read the code ↗</a>
+          <button type="button" data-dlg="dlg-fc">full story +</button>
+        </div>
+      </article>
+
+    </div>
+    <p class="tease">all three were built the same unusual way — <a href="#how">watch how ↓</a></p>
+  </div>
+</section>
+
+<!-- ============ SLIDE 3 : HOW ============ -->
+<section class="slide" id="how" aria-label="How Pratik builds">
+  <div class="slide-in">
+    <div class="shead"><span class="idx">03</span><h2>How I build</h2><span class="hint">I don't write the code — I run the system that does. one real build, five acts.</span></div>
+
+    <div class="story" id="story">
+      <div class="story-top">
+        <div class="segs" role="tablist" aria-label="Build acts">
+          <button class="seg on" data-s="0" type="button" role="tab" aria-selected="true"><span class="slab">01 idea</span><i></i></button>
+          <button class="seg" data-s="1" type="button" role="tab" aria-selected="false"><span class="slab">02 spec</span><i></i></button>
+          <button class="seg" data-s="2" type="button" role="tab" aria-selected="false"><span class="slab">03 bootstrap</span><i></i></button>
+          <button class="seg" data-s="3" type="button" role="tab" aria-selected="false"><span class="slab">04 phases</span><i></i></button>
+          <button class="seg" data-s="4" type="button" role="tab" aria-selected="false"><span class="slab">05 ship</span><i></i></button>
+        </div>
+        <div class="sctl">
+          <button id="playpause" type="button" aria-label="Pause story">⏸</button>
+          <button id="replay" type="button" aria-label="Replay story">↺</button>
+        </div>
+      </div>
+
+      <div class="story-stage" id="stage">
+        <div class="dscene on" id="d0">
+          <div class="art note">
+            <p class="cap"><span class="sq r" aria-hidden="true"></span>idea inbox</p>
+            <p class="body">"cal.com alternative — what if you could book 2–3 slots and <u>I pick</u> which one sticks? also internal mtgs should bend for client calls. name: flexcal?"</p>
+            <p class="scrib">— dumped at 11:47 pm, triage later</p>
+          </div>
+        </div>
+
+        <div class="dscene" id="d1">
+          <div class="art chat">
+            <p class="cap"><span class="sq a" aria-hidden="true"></span>claude project: flexcal · the CTO thread</p>
+            <div class="bub me" id="b1"><span class="w">me</span>I want to build a cal.com alternative. Fully open source. Pick one thing cal doesn't do and let's build that.</div>
+            <div class="bub cto" id="b2"><span class="w">cto</span>The gap is context-aware availability — weather APIs, live traffic buffers, even hardware triggers gating your slots…</div>
+            <div class="bub me" id="b3"><span class="w">me</span>Do you really think these are useful? What I was thinking was multiple slot bookings — you pick two or three slots, rank them, and I approve the one that works. Also internal meetings should be bumpable for a good external call.</div>
+            <div class="bub cto" id="b4"><span class="w">cto</span>That's a much better wedge — real friction, zero setup. Locking the build spec: <b>multi-slot proposals + bumpable internal blocks.</b></div>
+          </div>
+        </div>
+
+        <div class="dscene" id="d2">
+          <div class="art term">
+            <p class="cap"><span class="sq a" aria-hidden="true"></span>terminal · bootstrap</p>
+            <pre id="tt"></pre>
+          </div>
+        </div>
+
+        <div class="dscene" id="d3">
+          <div class="art ide">
+            <div class="tbar">
+              <span class="tdot" aria-hidden="true"></span><span class="tdot" aria-hidden="true"></span><span class="tdot" aria-hidden="true"></span>
+              <span class="tname">VS Code — flexcal · the phases · me at the wheel</span>
+            </div>
+            <div class="ide-body">
+              <div class="cmds" role="tablist" aria-label="Slash commands">
+                <p class="chead">.claude/commands</p>
+                <button class="cmdb" data-c="explore" type="button">/explore<small>understand before building</small></button>
+                <button class="cmdb" data-c="create-plan" type="button">/create-plan<small>PLAN.md, phased</small></button>
+                <button class="cmdb" data-c="execute" type="button">/execute<small>build one phase</small></button>
+                <button class="cmdb" data-c="review" type="button">/review<small>full code review</small></button>
+                <button class="cmdb" data-c="peer-review" type="button">/peer-review<small>verify a 2nd model</small></button>
+                <button class="cmdb" data-c="create-issue" type="button">/create-issue<small>capture → Linear</small></button>
+                <button class="cmdb" data-c="learning" type="button">/learning-opportunity<small>teach me this</small></button>
+              </div>
+              <div class="ed">
+                <p class="cdesc" id="cdesc"></p>
+                <div class="out" id="ideout" aria-live="polite"></div>
+                <div class="sbar"><span>⎇ phase-2-multi-slot</span><span>MCP <span class="ok2">linear ✓</span> <span class="ok2">supabase ✓</span></span><span class="amb">PLAN.md 66%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dscene" id="d4">
+          <div class="art deploy">
+            <p class="cap" style="justify-content:center"><span class="sq g" aria-hidden="true"></span>plan complete</p>
+            <p class="url">flexcal · 5/5 milestones</p>
+            <span class="badge g"><span class="sq g" aria-hidden="true"></span>feature-complete</span>
+            <p class="plan-line">PLAN.md · 100% · every phase human-reviewed · next: beta hardening</p>
+            <span class="burst" id="burst" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="narr" id="narr" aria-live="polite"><b>rule 01</b> — every idea gets written down raw. triage comes later.</p>
+    </div>
+
+    <div class="close-row">
+      <p class="say">this site was built the same way — <a href="mailto:hello@pratiksrivastava.com">say hello</a></p>
+      <div class="links">
+        <a href="https://github.com/srivastavakumarpratik">github</a>
+        <a href="https://www.linkedin.com/in/CHANGE-ME">linkedin</a>
+        <span class="small">© 2026 pratik srivastava</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIALOGS ============ -->
+<dialog id="dlg-bby" aria-labelledby="dlg-bby-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-bby-t">Best Buy</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">product manager · data &amp; ai experiences · jan 2025 — present · bengaluru</p>
+    <p class="scope">Two charters: conversational AI for product discovery, and the governance layer that keeps analytics data trustworthy across every customer-facing surface.</p>
+    <ul>
+      <li>Product lead for the <b>AI Gift Finder</b> — conversational gift discovery across a ~300K-SKU catalogue, built on Gemini (Vertex AI). Live to all customers since November 2025; referenced by the CEO on an earnings call and in a <a href="https://cloud.google.com/customers/bestbuy" target="_blank" rel="noopener">Google Cloud case study</a>.</li>
+      <li>Built an enterprise <b>data-contract platform</b> replacing wiki-based tracking specs with versioned, validated JSON contracts — adopted by 40+ experience teams.</li>
+      <li>Ran ~8 A/B experiments across the Gift Finder's entry point, conversation initiation, and personalization inputs.</li>
+    </ul>
+    <div class="tags"><span>conversational AI</span><span>Gemini · Vertex AI</span><span>data contracts</span><span>event instrumentation</span><span>experimentation</span></div>
+  </div>
+</dialog>
+
+<dialog id="dlg-ls" aria-labelledby="dlg-ls-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-ls-t">Lifesight</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">product manager · marketing measurement · jun 2024 — jan 2025 · bengaluru</p>
+    <p class="scope">Unified marketing-measurement platform — attribution, marketing-mix modeling, CDP. Owned connector integrations and productizing model outputs.</p>
+    <ul>
+      <li>Built a reusable <b>connector-onboarding framework</b> — authenticate → pull → normalize → ingest — on Meltano's tap/target model, with templates per method.</li>
+      <li>Translated MMM outputs — coefficients and equations — into <b>budget sheets, forecasts, and dashboards</b> that marketing and finance stakeholders could actually use.</li>
+    </ul>
+    <div class="tags"><span>MMM · attribution</span><span>ELT · Meltano</span><span>CDP</span><span>martech</span></div>
+  </div>
+</dialog>
+
+<dialog id="dlg-mn" aria-labelledby="dlg-mn-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-mn-t">Media.net</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">senior product analyst · ad arbitrage · jun 2021 — jun 2024 · mumbai</p>
+    <p class="scope">Sole analyst for an ad-arbitrage unit — analytics, tooling, and marketing instrumentation across a very large content portfolio.</p>
+    <ul>
+      <li>Evolved a cross-platform reporting dashboard into an in-house <b>ad-management platform</b>: automated underperformance rules with one-click bulk actions pushed back to each ad network via API.</li>
+      <li>Owned marketing analytics across a <b>500+ website portfolio</b> and led its Universal Analytics → GA4 migration.</li>
+    </ul>
+    <div class="tags"><span>ad-platform APIs</span><span>GA4 · GTM</span><span>automation rules</span><span>reporting at scale</span></div>
+  </div>
+</dialog>
+
+<dialog id="dlg-pov" aria-labelledby="dlg-pov-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-pov-t">Five opinions, each one paid for</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <div class="povfull">
+      <div class="pv"><span class="n">01</span><div><h4>Insight that isn't actionable is decoration.</h4><p>At Media.net I inherited a dashboard agencies loved but couldn't act on. Instead of adding charts, I rebuilt it so a flagged ad was <b>one click from fixed</b>. Analytics products should close the loop, or they're wallpaper.</p></div></div>
+      <div class="pv"><span class="n">02</span><div><h4>Enforce standards at authoring time, not by policy.</h4><p>Wiki specs get ignored; validated contracts can't be. The same instinct runs through Just In Case: <b>a rule the app enforces by refusing to boot beats a warning nobody reads.</b></p></div></div>
+      <div class="pv"><span class="n">03</span><div><h4>The model isn't the product. The legible artifact is.</h4><p>MMM output is coefficients; the users were marketers. The PM's job with AI is <b>translating what the model says into something a stakeholder can act on</b> — a budget sheet, a forecast, a conversation that ends in a product page.</p></div></div>
+      <div class="pv"><span class="n">04</span><div><h4>Nothing ships unread.</h4><p>My build system has no autopilot. I fire every command myself, and <b>I read every phase before it merges</b>. I ship this code, so I intend to understand this code.</p></div></div>
+      <div class="pv"><span class="n">05</span><div><h4>Building isn't the bottleneck anymore. Distribution is.</h4><p>AI collapsed the cost of shipping — my products took evenings, not funding rounds. The scarce skills now are <b>knowing what's worth building</b> and getting it into people's hands. That's a product problem, which suits me fine.</p></div></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="dlg-jic" aria-labelledby="dlg-jic-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-jic-t">Just In Case</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">web app · digital legacy · shipped &amp; live · 33 sections · 7,468 lines strict TS · zero backend</p>
+    <p class="wedge"><b>The wedge:</b> the obvious alternative is a password manager's emergency access — a vault that hands over the keys. This is a <b>pointer map that is architecturally incapable of becoming a vault</b>: a guard scans every schema key, label, and help text for credential patterns and refuses to boot the app if one appears. Holding the file lets your family find everything and touch nothing.</p>
+    <p class="dev"><b>for the developers:</b> one 1,587-line schema file drives every section, editor, list view, the gaps dashboard, and the JSON/PDF round-trip — adding a section is a data change to one file. <b>connect-src 'none'</b> in the CSP, so "no network calls" is enforced by the browser, not promised in a README.</p>
+    <p class="foot">⚑ the guard even rejects help text that mentions passwords — the warning about the rule had to move where the scanner can't reach. the rule outranks the reminder about the rule.</p>
+    <div class="dlinks"><a href="https://just-in-case-srivastavakumarpratik-8764s-projects.vercel.app" target="_blank" rel="noopener">open the live app ↗</a><span>repo private</span></div>
+  </div>
+</dialog>
+
+<dialog id="dlg-cm" aria-labelledby="dlg-cm-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-cm-t">claudemeter</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">chrome extension · developer tool · shipped, in daily use · 117 tests · zero dependencies · MV3</p>
+    <p class="wedge"><b>The wedge:</b> every competing floating widget ships a native binary. claudemeter floats over your editor and terminal via the <b>Document Picture-in-Picture API</b> while staying an ordinary Chrome extension — and it reads the whole usage response, picking the headline by <b>shortest runway</b>, not fullest bar.</p>
+    <p class="dev"><b>for the developers:</b> polling once a minute builds a local history; a least-squares fit turns it into "~1h 30m of runway" — and the forecast <b>refuses to answer</b> across window resets or thin data rather than inventing a number. Most of the history tests assert the refusals, not the happy path.</p>
+    <p class="foot">⚑ it caught its own worst bug — a 1% reading rendering as "100% used" — because the number was on screen next to claude's own settings page, visibly disagreeing.</p>
+    <div class="dlinks"><span>repo private · not on the web store · runs unpacked · walkthrough on request</span></div>
+  </div>
+</dialog>
+
+<dialog id="dlg-fc" aria-labelledby="dlg-fc-t">
+  <div class="dlg-in">
+    <div class="dlg-head"><h3 id="dlg-fc-t">FlexCal</h3><button class="dlg-close" type="button" aria-label="Close">✕</button></div>
+    <p class="role">web app · scheduling · building, pre-beta · 5/5 milestones · 46 tests · 18 SQL migrations · backend live on Supabase cloud</p>
+    <p class="wedge"><b>The wedge vs Calendly / cal.com:</b> an internal 1:1 and a client call are not the same kind of busy. Hosts approve one of three ranked proposals — each annotated with what saying yes costs ("would bump 2 blocks, 6 people notified") — and <b>bumpable priority blocks</b> keep malleable meetings bookable, with approval.</p>
+    <p class="dev"><b>for the developers:</b> double-booking is impossible <b>by construction</b> — a Postgres GiST exclusion constraint over the host's time range, not application code. No service-role key anywhere: seven SECURITY DEFINER functions are the entire public API, and <code>anon</code> has zero table access — verified live.</p>
+    <p class="foot">⚑ a live sync test fetched a google holiday calendar: 524 events parsed, exactly zero imported — every one said "show me as free". the parser was right for a reason that only looks like a bug.</p>
+    <div class="dlinks"><a href="https://github.com/srivastavakumarpratik/flexcal/tree/claude/flexcal-scheduling-brd-fk1hif" target="_blank" rel="noopener">read the code ↗</a></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $=id=>document.getElementById(id);
+
+  /* ---- dialogs ---- */
+  document.querySelectorAll('[data-dlg]').forEach(el=>{
+    el.addEventListener('click',e=>{
+      // real links inside cards navigate; don't open the dialog over them
+      if(e.target.closest('a'))return;
+      e.stopPropagation();
+      const d=$(el.dataset.dlg);
+      if(d&&!d.open)d.showModal();
+    });
+  });
+  document.querySelectorAll('.pp[role="button"]').forEach(el=>{
+    el.addEventListener('keydown',e=>{
+      if((e.key==='Enter'||e.key===' ')&&e.target===el){e.preventDefault();$(el.dataset.dlg).showModal()}
+    });
+  });
+  document.querySelectorAll('dialog').forEach(d=>{
+    d.querySelector('.dlg-close').addEventListener('click',()=>d.close());
+    d.addEventListener('click',e=>{if(e.target===d)d.close()});
+  });
+
+  /* ---- slide dots ---- */
+  const slides=['me','built','how'];
+  const dots=[...document.querySelectorAll('.dot')];
+  dots.forEach(b=>b.addEventListener('click',()=>$(b.dataset.t).scrollIntoView({behavior:reduce?'auto':'smooth'})));
+  const sio=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting)dots.forEach(b=>b.classList.toggle('on',b.dataset.t===e.target.id));
+    });
+  },{threshold:.5});
+  slides.forEach(id=>sio.observe($(id)));
+
+  /* ---- POV cycling tile ---- */
+  const POVS=[
+    '"Insight that isn’t actionable is decoration."',
+    '"Enforce standards at authoring time, not by policy."',
+    '"The model isn’t the product. The legible artifact is."',
+    '"Nothing ships unread."',
+    '"Building isn’t the bottleneck anymore. Distribution is."'
+  ];
+  if(!reduce){
+    let pi=0;
+    setInterval(()=>{
+      pi=(pi+1)%POVS.length;
+      const el=$('povq');
+      el.style.opacity=0;
+      setTimeout(()=>{el.textContent=POVS[pi];el.style.opacity=1},380);
+    },4200);
+  }
+
+  /* ---- terminal typing ---- */
+  const termLines=['$ ./new-project.sh flexcal','','✓ repo created + pushed','✓ CLAUDE.md + slash commands installed','✓ Linear project created','✓ Supabase schema wired','','ready in 41s — setup was paid once, long ago'];
+  const totalChars=termLines.reduce((s,l)=>s+l.length+1,0);
+  function renderTerm(u){
+    let budget=Math.floor(u*totalChars),out='';
+    for(const line of termLines){
+      if(budget<=0)break;
+      const take=line.slice(0,budget);
+      const cls=line.startsWith('✓')?'ok':(line.startsWith('ready')?'dim':'');
+      out+=cls?('<span class="'+cls+'">'+take+'</span>'):take;
+      budget-=line.length;
+      if(budget>0){out+='\n';budget-=1}
+    }
+    $('tt').innerHTML=out+'<span class="cur"></span>';
+  }
+
+  /* ---- slash-command explorer ---- */
+  const sqg='<span class="sq g"></span>',sqa='<span class="sq a"></span>';
+  const CMDS={
+    'explore':{desc:'<b>Understand before building.</b> Reads the codebase and the build spec, then returns every ambiguity as a question. Zero open questions before any code — and it is forbidden from writing any.',out:'<span class="cl"><span class="who">me &gt;</span>/explore</span>\nreading repo + build spec…\n<span class="ok">✓ codebase mapped · patterns noted</span>\n<span class="hi">4 ambiguities surfaced</span> → answered from the spec\n<span class="dim">no code written. zero assumptions.</span>'},
+    'create-plan':{desc:'<b>Turn the discussion into PLAN.md.</b> Minimal phased steps with 🟩🟨🟥 status and a progress %. No extra scope. Still not allowed to build.',out:'<span class="cl"><span class="who">me &gt;</span>/create-plan</span>\n<span class="ok">✓ PLAN.md written · 3 phases</span>\ncritical decisions logged with rationale\n<span class="dim">nothing beyond what we agreed. not building yet.</span>'},
+    'execute':{desc:'<b>Build exactly one phase.</b> Branch, conventional commits, a PR, and a status report. Stops at the phase boundary — never chains ahead on its own.',out:'<span class="cl"><span class="who">me &gt;</span>/execute</span>\nbranch <span class="hi">phase-2-multi-slot</span> · 14 files · tests green\n<span class="ok">✓ PR opened + status report attached</span>\n<span class="dim">1 deviation flagged for the CTO thread</span>'},
+    'review':{desc:'<b>Full review checklist.</b> Logging, error handling, types, security, RLS, performance, architecture — sorted by severity with a fix per issue.',out:'<span class="cl"><span class="who">me &gt;</span>/review</span>\n12 files reviewed\n<span class="hi">⚠ HIGH — RLS missing on proposed_slots</span> → fixed\n<span class="ok">✓ merged · PLAN.md '+sqg+' '+sqg+' '+sqa+'</span>'},
+    'peer-review':{desc:'<b>Verify a second model’s review.</b> Every finding checked against the actual code. Valid → fix plan. Invalid → rejected, with reasons.',out:'<span class="cl"><span class="who">me &gt;</span>/peer-review</span>\nsecond model’s findings, verified against the code:\n<span class="ok">2 valid</span> → fix plan · <span class="dim">3 rejected, with reasons</span>\n<span class="dim">I don’t accept review at face value. neither should my tools.</span>'},
+    'create-issue':{desc:'<b>Capture without derailing.</b> A mid-flow bug or idea becomes a complete Linear ticket in under two minutes, then straight back to the build.',out:'<span class="cl"><span class="who">me &gt;</span>/create-issue</span>\nmid-flow thought → captured, not chased\n<span class="ok">✓ FLEX-19 filed to Linear</span>: slot conflict on DST boundary\n<span class="dim">back to the build in 90 seconds</span>'},
+    'learning':{desc:'<b>Pause and teach me.</b> Explains what we just built at three depths — concept, mechanics, senior-engineer view.',out:'<span class="cl"><span class="who">me &gt;</span>/learning-opportunity</span>\npause development. explain row-level security —\nconcept → mechanics → the senior-engineer view\n<span class="dim">I’m a PM shipping code. I intend to understand it.</span>'}
+  };
+  let curCmd=null;
+  function selectCmd(id){
+    if(curCmd===id||!CMDS[id])return;curCmd=id;
+    document.querySelectorAll('.cmdb').forEach(b=>b.classList.toggle('on',b.dataset.c===id));
+    $('cdesc').innerHTML=CMDS[id].desc;
+    $('ideout').innerHTML=CMDS[id].out.split('\n').join('<br>');
+  }
+  document.querySelectorAll('.cmdb').forEach(b=>b.addEventListener('click',()=>{takeControl();selectCmd(b.dataset.c)}));
+
+  /* ---- confetti ---- */
+  function makeBurst(){
+    const b=$('burst');b.innerHTML='';
+    const colors=['var(--green)','var(--amber-raw)','var(--red-raw)'];
+    for(let k=0;k<26;k++){
+      const i=document.createElement('i');
+      const ang=Math.random()*Math.PI*2,d=90+Math.random()*160;
+      i.style.setProperty('--dx',Math.cos(ang)*d+'px');
+      i.style.setProperty('--dy',Math.sin(ang)*d+'px');
+      i.style.background=colors[k%3];
+      i.style.animationDelay=(Math.random()*.15)+'s';
+      b.appendChild(i);
+    }
+    b.classList.add('go');
+  }
+
+  /* ---- the story engine ---- */
+  const RULES=[
+    '<b>rule 01</b> — every idea gets written down raw. triage comes later.',
+    '<b>rule 02</b> — the CTO proposes, I decide. the first idea is rarely the wedge.',
+    '<b>rule 03</b> — setup is paid once. a new product costs one command.',
+    '<b>rule 04</b> — nothing runs on its own. I fire every command, and I read every phase before it merges.',
+    '<b>rule 05</b> — shipped beats planned. the delta is the product.'
+  ];
+  const ACT_MS=[3800,7200,4200,9000,4200];
+  const AUTO_CMDS=['explore','create-plan','execute','review'];
+  const segs=[...document.querySelectorAll('.seg')];
+  let cur=0,auto=!reduce,playing=false,paused=false,actStart=0,pausedAt=0,raf=null,timers=[],ended=false,started=false;
+
+  function clearTimers(){timers.forEach(clearTimeout);timers=[]}
+  function setSegs(){
+    segs.forEach((s,i)=>{
+      s.classList.toggle('on',i===cur);
+      s.setAttribute('aria-selected',i===cur);
+      s.querySelector('i').style.width=i<cur?'100%':(i===cur?s.querySelector('i').style.width:'0%');
+    });
+  }
+  function showScene(n){
+    for(let i=0;i<5;i++)$('d'+i).classList.toggle('on',i===n);
+    $('narr').innerHTML=RULES[n];
+  }
+  function enterAct(n){
+    cur=n;clearTimers();
+    showScene(n);
+    segs.forEach((s,i)=>s.querySelector('i').style.width=i<n?'100%':'0%');
+    setSegs();
+    if(n===0){/* static note */}
+    if(n===1){
+      ['b1','b2','b3','b4'].forEach(id=>$(id).classList.remove('show'));
+      const d=auto?ACT_MS[1]:2400;
+      [0.04,0.28,0.52,0.78].forEach((f,i)=>timers.push(setTimeout(()=>$('b'+(i+1)).classList.add('show'),f*d)));
+    }
+    if(n===2){
+      renderTerm(0);
+      const DUR=auto?ACT_MS[2]*0.8:2200,t0=performance.now();
+      const tick=now=>{const u=Math.min(1,(now-t0)/DUR);renderTerm(u);if(u<1&&!paused)timers.push(setTimeout(()=>requestAnimationFrame(tick),0))};
+      requestAnimationFrame(tick);
+    }
+    if(n===3){
+      if(auto){
+        curCmd=null;selectCmd(AUTO_CMDS[0]);
+        AUTO_CMDS.slice(1).forEach((c,i)=>timers.push(setTimeout(()=>{curCmd=null;selectCmd(c)},(i+1)*ACT_MS[3]/4)));
+      } else if(!curCmd) selectCmd('explore');
+    }
+    if(n===4)makeBurst();
+    else{$('burst').classList.remove('go')}
+  }
+  function loop(now){
+    if(!playing||paused)return;
+    const el=now-actStart,ms=ACT_MS[cur];
+    segs[cur].querySelector('i').style.width=Math.min(100,el/ms*100)+'%';
+    if(el>=ms){
+      if(cur<4){actStart=now;enterAct(cur+1);}
+      else{playing=false;ended=true;$('playpause').textContent='▶';$('playpause').setAttribute('aria-label','Play story');return}
+    }
+    raf=requestAnimationFrame(loop);
+  }
+  function play(){
+    if(ended){replay();return}
+    playing=true;paused=false;auto=true;
+    $('playpause').textContent='⏸';$('playpause').setAttribute('aria-label','Pause story');
+    actStart=performance.now()-(pausedAt||0);pausedAt=0;
+    raf=requestAnimationFrame(loop);
+  }
+  function pause(){
+    if(!playing||paused)return;
+    paused=true;pausedAt=performance.now()-actStart;
+    $('playpause').textContent='▶';$('playpause').setAttribute('aria-label','Play story');
+    if(raf)cancelAnimationFrame(raf);
+  }
+  function takeControl(){
+    playing=false;paused=false;auto=false;ended=false;pausedAt=0;
+    if(raf)cancelAnimationFrame(raf);
+    $('playpause').textContent='▶';$('playpause').setAttribute('aria-label','Play story');
+  }
+  function replay(){
+    takeControl();auto=true;ended=false;
+    enterAct(0);playing=true;paused=false;
+    $('playpause').textContent='⏸';$('playpause').setAttribute('aria-label','Pause story');
+    actStart=performance.now();
+    raf=requestAnimationFrame(loop);
+  }
+  segs.forEach(s=>s.addEventListener('click',()=>{takeControl();enterAct(+s.dataset.s);segs[cur].querySelector('i').style.width='100%'}));
+  $('playpause').addEventListener('click',()=>{if(playing&&!paused)pause();else play()});
+  $('replay').addEventListener('click',replay);
+  $('story').addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'){takeControl();enterAct(Math.min(4,cur+1));segs[cur].querySelector('i').style.width='100%';e.preventDefault()}
+    if(e.key==='ArrowLeft'){takeControl();enterAct(Math.max(0,cur-1));segs[cur].querySelector('i').style.width='100%';e.preventDefault()}
+  });
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});
+
+  if(reduce){
+    auto=false;renderTerm(1);
+    document.querySelectorAll('.chat .bub').forEach(e=>e.classList.add('show'));
+    selectCmd('explore');
+    enterAct(0);
+    $('playpause').style.display='none';
+    return;
+  }
+  renderTerm(0);
+  /* autostart when slide 3 becomes visible */
+  const hio=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting&&!started){started=true;replay();hio.disconnect()}
+    });
+  },{threshold:.45});
+  hio.observe($('story'));
+  /* hover pauses, leaving resumes (only while autoplaying) */
+  $('stage').addEventListener('pointerenter',()=>{if(playing)pause()});
+  $('stage').addEventListener('pointerleave',()=>{if(paused&&auto&&!ended)play()});
+})();
+</script>
+</body>
+</html>
